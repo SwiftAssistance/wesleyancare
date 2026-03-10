@@ -115,6 +115,17 @@ export default function Services() {
         </div>
       </section>
 
+      {/* ── HOW WE WORK NOTE ──────────────────────────── */}
+      <section className="py-12 bg-white border-b border-gray-100">
+        <div className="max-w-6xl mx-auto px-5">
+          <Reveal>
+            <p className="text-gray-500 text-base max-w-3xl leading-relaxed">
+              Across every service we provide, two things don't change: the carers we place are fully DBS-checked, trained, and regularly supervised; and wherever possible, you'll see the same small number of familiar faces rather than a rotating pool of strangers. That consistency matters — especially when someone's needs are complex.
+            </p>
+          </Reveal>
+        </div>
+      </section>
+
       {/* ── SERVICE CARDS ─────────────────────────────── */}
       <section className="py-24">
         <div className="max-w-6xl mx-auto px-5 space-y-6">

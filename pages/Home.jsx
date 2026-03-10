@@ -1,6 +1,11 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight, Phone, MapPin } from 'lucide-react';
+import { POSTS } from '../data/blogPosts.js';
 import Reveal from '../components/Reveal.jsx';
+
+function formatDate(iso) {
+  return new Date(iso).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+}
 
 const SERVICES_PREVIEW = [
   { title: 'Dementia Care',         desc: 'Consistent, patient support for individuals living with dementia — building routine and calm in familiar surroundings.' },
@@ -186,30 +191,32 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── FUNDING TEASER ────────────────────────────── */}
+      {/* ── BLOG PREVIEW ──────────────────────────────── */}
       <section className="py-24 bg-[#1B2A4A]">
-        <div className="max-w-6xl mx-auto px-5 grid md:grid-cols-2 gap-16 items-center">
+        <div className="max-w-6xl mx-auto px-5">
           <Reveal>
-            <div>
-              <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#D4A855] mb-6">Funding Your Care</p>
-              <h2 className="font-serif text-4xl md:text-5xl text-white leading-tight mb-6">
-                You may be entitled to Direct Payments.
+            <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+              <h2 className="font-serif text-4xl md:text-5xl text-white leading-tight max-w-xl">
+                Advice for families navigating care.
               </h2>
-              <p className="text-white/60 text-lg leading-relaxed mb-8">
-                If your local council assesses you as needing care, you could receive Direct Payments to choose and fund your own provider — including Wesleyan Care. Many families in Slough are eligible but never claim.
-              </p>
-              <Link to="/funding" className="inline-flex items-center gap-2 bg-[#D4A855] hover:bg-[#c09040] text-white px-7 py-3.5 rounded-full font-semibold transition-colors text-sm">
-                Read about funding options <ArrowRight size={15} />
+              <Link to="/blog" className="inline-flex items-center gap-2 text-sm font-semibold text-[#D4A855] hover:text-white transition-colors whitespace-nowrap">
+                All articles <ArrowRight size={14} />
               </Link>
             </div>
           </Reveal>
-          <Reveal delay={120}>
-            <div className="space-y-5 text-white/70 text-lg leading-relaxed">
-              <p><strong className="text-white font-semibold">It won't affect your benefits.</strong> Direct Payments are not counted as income, so they don't reduce Universal Credit, Housing Benefit, or Pension Credit.</p>
-              <p><strong className="text-white font-semibold">You choose the provider.</strong> The money is yours to spend on care you actually want — not what the council arranges for you.</p>
-              <p><strong className="text-white font-semibold">We can guide you through it.</strong> The application process is straightforward. Call us and we'll explain what to ask for.</p>
-            </div>
-          </Reveal>
+          <div className="grid md:grid-cols-3 gap-px bg-white/10">
+            {POSTS.slice(0, 3).map((post, i) => (
+              <Reveal key={post.slug} delay={i * 80}>
+                <Link to={`/blog/${post.slug}`} className="group bg-[#1B2A4A] hover:bg-[#243860] p-8 transition-colors flex flex-col h-full">
+                  <p className="text-xs font-bold uppercase tracking-widest text-[#D4A855] mb-3">{post.category}</p>
+                  <h3 className="font-serif text-xl text-white leading-snug mb-3 group-hover:text-[#D4A855] transition-colors flex-1">
+                    {post.title}
+                  </h3>
+                  <p className="text-xs text-white/40 mt-4">{formatDate(post.date)}</p>
+                </Link>
+              </Reveal>
+            ))}
+          </div>
         </div>
       </section>
 
