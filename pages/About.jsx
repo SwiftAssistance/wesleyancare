@@ -141,18 +141,24 @@ export default function About() {
       <section className="py-24 bg-[#1B2A4A]">
         <div className="max-w-6xl mx-auto px-5 grid md:grid-cols-2 gap-12 items-center">
           <Reveal>
-            <h2 className="font-serif text-4xl md:text-5xl text-white leading-tight">
-              Ready to have a conversation?
+            <h2 className="font-serif text-4xl md:text-5xl text-white leading-tight mb-4">
+              We're easy to reach.
             </h2>
+            <p className="text-white/50 text-lg">No automated system, no waiting in a queue. Call and someone will answer.</p>
           </Reveal>
           <Reveal delay={100}>
-            <div className="flex flex-wrap gap-4">
-              <a href="tel:01753424473" className="inline-flex items-center gap-2 bg-[#D4A855] hover:bg-[#c09040] text-white px-8 py-4 rounded-full font-semibold transition-colors">
-                <Phone size={16} /> 01753 424 473
+            <div>
+              <a href="tel:01753424473" className="block font-serif text-4xl text-[#D4A855] hover:text-white transition-colors leading-none tracking-tight mb-6">
+                01753 424 473
               </a>
-              <Link to="/services" className="inline-flex items-center gap-2 border border-white/30 hover:border-white text-white px-8 py-4 rounded-full font-semibold transition-colors">
-                View our services <ArrowRight size={15} />
-              </Link>
+              <div className="flex flex-wrap gap-4">
+                <Link to="/contact" className="inline-flex items-center gap-2 bg-[#D4A855] hover:bg-[#c09040] text-white px-7 py-3.5 rounded-full font-semibold transition-colors text-sm">
+                  Send a message <ArrowRight size={14} />
+                </Link>
+                <Link to="/services" className="inline-flex items-center gap-2 border border-white/30 hover:border-white text-white px-7 py-3.5 rounded-full font-semibold transition-colors text-sm">
+                  Our services
+                </Link>
+              </div>
             </div>
           </Reveal>
         </div>
