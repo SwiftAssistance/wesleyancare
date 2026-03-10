@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, Phone } from 'lucide-react';
+import { ArrowRight, Phone, MapPin, Shield, Award, Users, CheckCircle2 } from 'lucide-react';
 import Reveal from '../components/Reveal.jsx';
 
 const VALUES = [
@@ -9,6 +9,18 @@ const VALUES = [
   { title: 'Adaptable',       desc: 'Needs change. We expect that. Care packages are reviewed regularly and adjusted without bureaucracy or delay. If something isn\'t working, we fix it.' },
 ];
 
+const CREDENTIALS = [
+  { icon: Shield,       title: 'CQC Registered',           desc: 'Registered with the Care Quality Commission — England\'s independent regulator of health and social care.' },
+  { icon: Award,        title: 'DBS-Checked Staff',        desc: 'Every carer undergoes enhanced DBS checks and reference verification before placement.' },
+  { icon: Users,        title: 'Ongoing Training',         desc: 'Regular supervision, mandatory training updates, and specialist modules in dementia, mental health, and complex care.' },
+  { icon: CheckCircle2, title: 'Insured & Compliant',      desc: 'Fully insured with comprehensive public liability and professional indemnity cover.' },
+];
+
+const AREAS = [
+  'Slough', 'Windsor', 'Maidenhead', 'Eton', 'Langley', 'Burnham',
+  'Farnham Common', 'Stoke Poges', 'Iver', 'Gerrards Cross', 'Taplow', 'Reading',
+];
+
 export default function About() {
   return (
     <>
@@ -16,6 +28,11 @@ export default function About() {
       <section className="pt-36 pb-24 bg-[#1B2A4A]">
         <div className="max-w-6xl mx-auto px-5">
           <Reveal>
+            <div className="flex items-center gap-2 text-[#D4A855] text-xs font-bold uppercase tracking-widest mb-6">
+              <Link to="/" className="hover:text-white transition-colors">Home</Link>
+              <span className="text-white/30">/</span>
+              <span>About</span>
+            </div>
             <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl text-white leading-[1.05] mb-8 max-w-3xl">
               We are a care provider.<br />
               <em className="text-[#D4A855] not-italic">Not a care factory.</em>
@@ -31,7 +48,6 @@ export default function About() {
       {/* ── MISSION ───────────────────────────────────── */}
       <section className="py-24 md:py-32 bg-white">
         <div className="max-w-6xl mx-auto px-5 grid md:grid-cols-2 gap-16 items-start">
-          {/* Left: editorial blockquote */}
           <Reveal>
             <div>
               <blockquote className="border-l-4 border-[#D4A855] pl-8 mb-10">
@@ -43,7 +59,6 @@ export default function About() {
             </div>
           </Reveal>
 
-          {/* Right: prose */}
           <Reveal delay={120}>
             <div className="space-y-5 text-gray-600 text-lg leading-relaxed">
               <p>
@@ -76,7 +91,7 @@ export default function About() {
           <div className="grid md:grid-cols-2 gap-x-16 gap-y-10">
             {VALUES.map((v, i) => (
               <Reveal key={i} delay={i * 80}>
-                <div>
+                <div className="border-l-2 border-[#D4A855]/30 pl-6">
                   <p className="font-bold text-[#1B2A4A] text-lg mb-2">{v.title}</p>
                   <p className="text-gray-500 leading-relaxed">{v.desc}</p>
                 </div>
@@ -86,8 +101,35 @@ export default function About() {
         </div>
       </section>
 
-      {/* ── EXPERIENCE ────────────────────────────────── */}
+      {/* ── CREDENTIALS ──────────────────────────────── */}
       <section className="py-24 md:py-32 bg-white">
+        <div className="max-w-6xl mx-auto px-5">
+          <Reveal>
+            <div className="text-center mb-16">
+              <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#D4A855] mb-4">Standards & Compliance</p>
+              <h2 className="font-serif text-4xl md:text-5xl text-[#1B2A4A] leading-tight max-w-2xl mx-auto">
+                The standards we hold ourselves to.
+              </h2>
+            </div>
+          </Reveal>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {CREDENTIALS.map((c, i) => (
+              <Reveal key={i} delay={i * 80}>
+                <div className="border border-gray-100 bg-[#FAF7F2] p-7 h-full">
+                  <div className="w-11 h-11 rounded-lg bg-[#1B2A4A]/5 text-[#D4A855] flex items-center justify-center mb-5">
+                    <c.icon size={22} />
+                  </div>
+                  <h3 className="font-bold text-[#1B2A4A] mb-2">{c.title}</h3>
+                  <p className="text-sm text-gray-500 leading-relaxed">{c.desc}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── EXPERIENCE ────────────────────────────────── */}
+      <section className="py-24 bg-[#FAF7F2] border-y border-gray-200">
         <div className="max-w-6xl mx-auto px-5 grid md:grid-cols-2 gap-16 items-start">
           <Reveal>
             <div>
@@ -106,6 +148,36 @@ export default function About() {
               <p>
                 We have built a team who reflect those values. People who stay, who build relationships with clients, and who understand that care work is skilled work that deserves to be done properly.
               </p>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* ── COVERAGE AREAS ───────────────────────────── */}
+      <section className="py-24 md:py-32 bg-white">
+        <div className="max-w-6xl mx-auto px-5 grid md:grid-cols-2 gap-16 items-start">
+          <Reveal>
+            <div>
+              <div className="w-12 h-12 rounded-lg bg-[#1B2A4A]/5 text-[#D4A855] flex items-center justify-center mb-6">
+                <MapPin size={24} />
+              </div>
+              <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#D4A855] mb-4">Where We Work</p>
+              <h2 className="font-serif text-4xl text-[#1B2A4A] leading-tight mb-6">
+                Based in Slough. Covering Berkshire and beyond.
+              </h2>
+              <p className="text-gray-500 leading-relaxed">
+                Our team is based in Slough and we provide care across Berkshire and surrounding areas. If you're unsure whether we cover your area, call us — we'll tell you honestly.
+              </p>
+            </div>
+          </Reveal>
+          <Reveal delay={100}>
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+              {AREAS.map((area, i) => (
+                <div key={i} className="flex items-center gap-2 bg-[#FAF7F2] border border-gray-100 px-4 py-3 text-sm text-[#1B2A4A] font-medium">
+                  <MapPin size={12} className="text-[#D4A855] flex-shrink-0" />
+                  {area}
+                </div>
+              ))}
             </div>
           </Reveal>
         </div>

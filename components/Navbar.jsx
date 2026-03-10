@@ -27,6 +27,8 @@ export default function Navbar() {
   // Scroll to top on page change
   useEffect(() => { window.scrollTo(0, 0); }, [pathname]);
 
+  const isActive = (to) => to === '/' ? pathname === '/' : pathname.startsWith(to);
+
   return (
     <nav className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${scrolled ? 'bg-white/95 backdrop-blur shadow-sm py-3' : 'bg-white/80 backdrop-blur-sm py-5'}`}>
       <div className="max-w-6xl mx-auto px-5 flex items-center justify-between">
@@ -41,7 +43,7 @@ export default function Navbar() {
               key={l.name}
               to={l.to}
               className={`text-sm font-medium transition-colors ${
-                pathname === l.to
+                isActive(l.to)
                   ? 'text-[#D4A855]'
                   : 'text-[#1B2A4A]/60 hover:text-[#1B2A4A]'
               }`}
@@ -72,7 +74,7 @@ export default function Navbar() {
             <Link
               key={l.name}
               to={l.to}
-              className={`py-3 text-base font-medium border-b border-gray-50 last:border-0 ${pathname === l.to ? 'text-[#D4A855]' : ''}`}
+              className={`py-3 text-base font-medium border-b border-gray-50 last:border-0 ${isActive(l.to) ? 'text-[#D4A855]' : ''}`}
             >
               {l.name}
             </Link>

@@ -1,53 +1,12 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight, Clock } from 'lucide-react';
 import Reveal from '../components/Reveal.jsx';
-
-const POSTS = [
-  {
-    tag: 'Dementia',
-    title: 'Understanding dementia care at home',
-    summary: 'What families should know about supporting a loved one with dementia — from daily routines to communication techniques that actually help.',
-    date: '5 March 2026',
-    readTime: '6 min read',
-  },
-  {
-    tag: 'Families',
-    title: 'How to choose the right care provider',
-    summary: 'A straightforward guide to finding a provider that fits your family. What to ask, what to look for, and the red flags to watch out for.',
-    date: '21 February 2026',
-    readTime: '5 min read',
-  },
-  {
-    tag: 'Wellbeing',
-    title: 'Looking after yourself as a family carer',
-    summary: 'Caring for someone you love is rewarding but exhausting. Practical steps to protect your own mental and physical health along the way.',
-    date: '8 February 2026',
-    readTime: '4 min read',
-  },
-  {
-    tag: 'Mental Health',
-    title: 'Supporting adults with mental health challenges',
-    summary: 'How structured, compassionate home care can make a real difference for adults living with anxiety, depression, or more complex conditions.',
-    date: '24 January 2026',
-    readTime: '7 min read',
-  },
-  {
-    tag: 'Cardiac',
-    title: 'Cardiac care: what to expect after hospital',
-    summary: 'Returning home after a cardiac event can feel daunting. Here\'s how specialist home care supports recovery and ongoing management.',
-    date: '10 January 2026',
-    readTime: '5 min read',
-  },
-  {
-    tag: 'Guide',
-    title: 'Navigating council funding and Direct Payments',
-    summary: 'Many families in Slough are entitled to council funding but never claim. This post explains how Direct Payments work and how to apply.',
-    date: '28 December 2025',
-    readTime: '6 min read',
-  },
-];
+import POSTS from '../data/posts.js';
 
 export default function Blogs() {
+  const featured = POSTS[0];
+  const rest     = POSTS.slice(1);
+
   return (
     <>
       {/* ── PAGE HERO ─────────────────────────────────── */}
@@ -70,41 +29,80 @@ export default function Blogs() {
         <div className="border-t border-white/10" />
       </section>
 
-      {/* ── BLOG POSTS ────────────────────────────────── */}
-      <section className="py-24 md:py-32 bg-white">
+      {/* ── FEATURED POST ─────────────────────────────── */}
+      <section className="py-20 md:py-28 bg-white">
         <div className="max-w-6xl mx-auto px-5">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-gray-200">
-            {POSTS.map((post, i) => (
-              <Reveal key={i} delay={i * 60}>
-                <article className="bg-white p-8 flex flex-col h-full group">
-                  <div className="flex items-center gap-3 mb-5">
-                    <span className="text-[10px] font-bold uppercase tracking-widest text-[#D4A855] bg-[#D4A855]/10 px-3 py-1 rounded-full">
-                      {post.tag}
+          <Reveal>
+            <Link to={`/blogs/${featured.slug}`} className="group block">
+              <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
+                <div className="bg-[#1B2A4A] aspect-[4/3] md:aspect-auto md:h-full flex items-center justify-center rounded-sm overflow-hidden">
+                  <div className="text-center px-10 py-16">
+                    <span className="text-[10px] font-bold uppercase tracking-widest text-[#D4A855] bg-[#D4A855]/15 px-3 py-1 rounded-full">
+                      {featured.tag}
                     </span>
-                    <span className="flex items-center gap-1 text-xs text-gray-400">
-                      <Clock size={11} /> {post.readTime}
-                    </span>
+                    <p className="font-serif text-3xl text-white leading-snug mt-6">{featured.title}</p>
                   </div>
-                  <h2 className="font-serif text-xl text-[#1B2A4A] leading-snug mb-4 group-hover:text-[#D4A855] transition-colors">
-                    {post.title}
+                </div>
+                <div>
+                  <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#D4A855] mb-4">Latest Post</p>
+                  <h2 className="font-serif text-3xl md:text-4xl text-[#1B2A4A] leading-snug mb-5 group-hover:text-[#D4A855] transition-colors">
+                    {featured.title}
                   </h2>
-                  <p className="text-gray-500 text-sm leading-relaxed mb-6 flex-1">
-                    {post.summary}
-                  </p>
-                  <div className="flex items-center justify-between mt-auto pt-5 border-t border-gray-100">
-                    <p className="text-xs text-gray-400">{post.date}</p>
-                    <span className="inline-flex items-center gap-1 text-xs font-bold uppercase tracking-widest text-gray-300 group-hover:text-[#D4A855] transition-colors">
-                      Read <ArrowRight size={11} />
-                    </span>
+                  <p className="text-gray-500 text-lg leading-relaxed mb-6">{featured.summary}</p>
+                  <div className="flex items-center gap-4 text-sm text-gray-400 mb-8">
+                    <span className="flex items-center gap-1"><Clock size={13} /> {featured.readTime}</span>
+                    <span>{featured.date}</span>
                   </div>
-                </article>
-              </Reveal>
-            ))}
-          </div>
+                  <span className="inline-flex items-center gap-2 font-semibold text-[#1B2A4A] border-b-2 border-[#D4A855] pb-0.5 group-hover:text-[#D4A855] transition-colors text-sm">
+                    Read article <ArrowRight size={14} />
+                  </span>
+                </div>
+              </div>
+            </Link>
+          </Reveal>
         </div>
       </section>
 
-      {/* ── NEWSLETTER / CTA ─────────────────────────── */}
+      {/* ── ALL POSTS GRID ────────────────────────────── */}
+      {rest.length > 0 && (
+        <section className="pb-24 md:pb-32 bg-white">
+          <div className="max-w-6xl mx-auto px-5">
+            <Reveal>
+              <p className="text-xs font-bold uppercase tracking-[0.2em] text-gray-400 mb-10">More Articles</p>
+            </Reveal>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-gray-200">
+              {rest.map((post, i) => (
+                <Reveal key={post.slug} delay={i * 60}>
+                  <Link to={`/blogs/${post.slug}`} className="group block bg-white p-8 h-full">
+                    <div className="flex items-center gap-3 mb-5">
+                      <span className="text-[10px] font-bold uppercase tracking-widest text-[#D4A855] bg-[#D4A855]/10 px-3 py-1 rounded-full">
+                        {post.tag}
+                      </span>
+                      <span className="flex items-center gap-1 text-xs text-gray-400">
+                        <Clock size={11} /> {post.readTime}
+                      </span>
+                    </div>
+                    <h2 className="font-serif text-xl text-[#1B2A4A] leading-snug mb-4 group-hover:text-[#D4A855] transition-colors">
+                      {post.title}
+                    </h2>
+                    <p className="text-gray-500 text-sm leading-relaxed mb-6 flex-1">
+                      {post.summary}
+                    </p>
+                    <div className="flex items-center justify-between mt-auto pt-5 border-t border-gray-100">
+                      <p className="text-xs text-gray-400">{post.date}</p>
+                      <span className="inline-flex items-center gap-1 text-xs font-bold uppercase tracking-widest text-gray-300 group-hover:text-[#D4A855] transition-colors">
+                        Read <ArrowRight size={11} />
+                      </span>
+                    </div>
+                  </Link>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* ── CTA ──────────────────────────────────────── */}
       <section className="py-24 bg-[#FAF7F2] border-t border-gray-200">
         <div className="max-w-6xl mx-auto px-5 grid md:grid-cols-2 gap-12 items-center">
           <Reveal>

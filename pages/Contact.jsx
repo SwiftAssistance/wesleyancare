@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Phone, Mail, MapPin, Clock, ArrowRight, CheckCircle2 } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, ArrowRight, CheckCircle2, Shield } from 'lucide-react';
 import Reveal from '../components/Reveal.jsx';
 
 export default function Contact() {
@@ -90,7 +90,7 @@ export default function Contact() {
             </Reveal>
 
             <Reveal delay={100}>
-              <div className="border border-gray-100 bg-[#FAF7F2] p-7">
+              <div className="border border-gray-100 bg-[#FAF7F2] p-7 mb-6">
                 <div className="flex items-center gap-3 mb-5">
                   <Clock size={16} className="text-[#D4A855]" />
                   <p className="font-semibold text-[#1B2A4A] text-sm">Office hours</p>
@@ -109,6 +109,18 @@ export default function Contact() {
                 <p className="text-xs text-gray-400 mt-5 pt-5 border-t border-gray-200">For urgent care matters outside these hours, call our main number and leave a message.</p>
               </div>
             </Reveal>
+
+            <Reveal delay={150}>
+              <div className="border border-gray-100 bg-[#FAF7F2] p-7">
+                <div className="flex items-center gap-3 mb-4">
+                  <Shield size={16} className="text-[#D4A855]" />
+                  <p className="font-semibold text-[#1B2A4A] text-sm">Your enquiry is confidential</p>
+                </div>
+                <p className="text-sm text-gray-500 leading-relaxed">
+                  Everything you share with us is treated in confidence. We will never pass your details to third parties or contact you without your permission.
+                </p>
+              </div>
+            </Reveal>
           </div>
 
           {/* Right: form */}
@@ -118,7 +130,10 @@ export default function Contact() {
                 <div className="border border-gray-100 bg-[#FAF7F2] p-12 text-center">
                   <CheckCircle2 size={40} className="text-[#7BA68D] mx-auto mb-5" />
                   <h3 className="font-serif text-2xl text-[#1B2A4A] mb-3">Thank you.</h3>
-                  <p className="text-gray-500">We'll be back in touch within one working day. If it's urgent, call us on <strong className="text-[#1B2A4A]">01753 424 473</strong>.</p>
+                  <p className="text-gray-500 mb-6">We'll be back in touch within one working day. If it's urgent, call us on <strong className="text-[#1B2A4A]">01753 424 473</strong>.</p>
+                  <Link to="/" className="inline-flex items-center gap-2 text-sm font-semibold text-[#D4A855] hover:text-[#c09040] transition-colors">
+                    Back to homepage <ArrowRight size={14} />
+                  </Link>
                 </div>
               ) : (
                 <>
@@ -131,7 +146,7 @@ export default function Contact() {
                         <input
                           type="text" name="name" required value={form.name} onChange={handleChange}
                           placeholder="Your name"
-                          className="w-full border border-gray-200 px-4 py-3 text-sm text-[#1B2A4A] focus:outline-none focus:border-[#D4A855] transition-colors placeholder:text-gray-300 rounded-none"
+                          className="w-full border border-gray-200 px-4 py-3 text-sm text-[#1B2A4A] focus:outline-none focus:border-[#D4A855] transition-colors placeholder:text-gray-300 rounded-none bg-white"
                         />
                       </div>
                       <div>
@@ -139,7 +154,7 @@ export default function Contact() {
                         <input
                           type="tel" name="phone" value={form.phone} onChange={handleChange}
                           placeholder="07700 000000"
-                          className="w-full border border-gray-200 px-4 py-3 text-sm text-[#1B2A4A] focus:outline-none focus:border-[#D4A855] transition-colors placeholder:text-gray-300 rounded-none"
+                          className="w-full border border-gray-200 px-4 py-3 text-sm text-[#1B2A4A] focus:outline-none focus:border-[#D4A855] transition-colors placeholder:text-gray-300 rounded-none bg-white"
                         />
                       </div>
                     </div>
@@ -148,7 +163,7 @@ export default function Contact() {
                       <input
                         type="email" name="email" required value={form.email} onChange={handleChange}
                         placeholder="you@example.com"
-                        className="w-full border border-gray-200 px-4 py-3 text-sm text-[#1B2A4A] focus:outline-none focus:border-[#D4A855] transition-colors placeholder:text-gray-300 rounded-none"
+                        className="w-full border border-gray-200 px-4 py-3 text-sm text-[#1B2A4A] focus:outline-none focus:border-[#D4A855] transition-colors placeholder:text-gray-300 rounded-none bg-white"
                       />
                     </div>
                     <div>
@@ -172,7 +187,7 @@ export default function Contact() {
                       <textarea
                         name="message" required value={form.message} onChange={handleChange}
                         rows={5} placeholder="Tell us about your situation and what you're looking for..."
-                        className="w-full border border-gray-200 px-4 py-3 text-sm text-[#1B2A4A] focus:outline-none focus:border-[#D4A855] transition-colors placeholder:text-gray-300 resize-none rounded-none"
+                        className="w-full border border-gray-200 px-4 py-3 text-sm text-[#1B2A4A] focus:outline-none focus:border-[#D4A855] transition-colors placeholder:text-gray-300 resize-none rounded-none bg-white"
                       />
                     </div>
                     <button
@@ -197,9 +212,12 @@ export default function Contact() {
         <div className="max-w-6xl mx-auto px-5">
           <Reveal>
             <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-              <p className="text-gray-500 text-sm">
-                <strong className="text-[#1B2A4A]">Covering Slough, Berkshire & surrounding areas</strong> — including Windsor, Maidenhead, Reading, and beyond.
-              </p>
+              <div className="flex items-center gap-3">
+                <MapPin size={18} className="text-[#D4A855] flex-shrink-0" />
+                <p className="text-gray-500 text-sm">
+                  <strong className="text-[#1B2A4A]">Covering Slough, Berkshire & surrounding areas</strong> — including Windsor, Maidenhead, Langley, Iver, Reading, and beyond.
+                </p>
+              </div>
               <Link to="/services" className="inline-flex items-center gap-2 text-sm font-semibold text-[#1B2A4A] hover:text-[#D4A855] transition-colors whitespace-nowrap">
                 View our services <ArrowRight size={14} />
               </Link>
