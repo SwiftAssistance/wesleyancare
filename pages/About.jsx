@@ -1,109 +1,83 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, Heart, UserCheck, Shield, Clock, Users, CheckCircle2, Phone } from 'lucide-react';
+import { ArrowRight, Phone } from 'lucide-react';
 import Reveal from '../components/Reveal.jsx';
 
 const VALUES = [
-  { icon: UserCheck, title: 'Person-Centred Care',    desc: 'No two people are the same. Every care plan we create is built around the individual — their preferences, their routine, their life — not a one-size-fits-all schedule.' },
-  { icon: Shield,    title: 'Safe & Fully Vetted',    desc: 'Every member of the Wesleyan Care team is DBS-checked, reference-verified, and trained before they ever step foot in a client\'s home. Your safety is non-negotiable.' },
-  { icon: Users,     title: 'Genuinely Local',        desc: 'We are a Slough-based business — not a national franchise or call centre. We care about our reputation in this community because we are part of it.' },
-  { icon: Clock,     title: 'Flexible & Responsive',  desc: 'From a one-hour weekly visit to full-time live-in care, we build packages around what you actually need — and adjust as those needs change.' },
-];
-
-const TIMELINE = [
-  { year: '2014', title: 'Wesleyan Care founded', desc: 'Established in Slough to provide high-quality private care to adults with complex needs in Berkshire.' },
-  { year: '2016', title: 'Expanded services',     desc: 'Added specialist dementia care and mental health support to our offering, responding to growing community need.' },
-  { year: '2019', title: '200 families milestone', desc: 'Reached 200 families supported across Slough, Berkshire and surrounding areas.' },
-  { year: '2022', title: 'Spinal & cardiac care',  desc: 'Introduced dedicated care pathways for individuals living with spinal cord injuries and cardiac conditions.' },
-  { year: 'Now',  title: '500+ families strong',   desc: 'Continuing to grow — and continuing to put people first, one family at a time.' },
+  { title: 'Person-centred',  desc: 'Every care plan is built around the individual — their preferences, their existing routine, and what actually makes their day better. Not a package pulled off a shelf.' },
+  { title: 'Locally run',     desc: 'We are based in Slough. Not a national franchise with a regional manager somewhere else. The people making decisions about your care are the same people you\'ll speak to on the phone.' },
+  { title: 'Fully vetted',    desc: 'Every carer is DBS-checked, reference-verified, and trained before they begin. We don\'t cut corners on this — it\'s the foundation everything else rests on.' },
+  { title: 'Adaptable',       desc: 'Needs change. We expect that. Care packages are reviewed regularly and adjusted without bureaucracy or delay. If something isn\'t working, we fix it.' },
 ];
 
 export default function About() {
   return (
     <>
       {/* ── PAGE HERO ─────────────────────────────────── */}
-      <section className="pt-32 pb-20 bg-[#1B2A4A]">
+      <section className="pt-36 pb-24 bg-[#1B2A4A]">
         <div className="max-w-6xl mx-auto px-5">
           <Reveal>
-            <div className="flex items-center gap-2 text-[#D4A855] text-xs font-bold uppercase tracking-widest mb-6">
-              <Link to="/" className="hover:text-white transition-colors">Home</Link>
-              <span className="text-white/30">/</span>
-              <span>About</span>
-            </div>
-            <h1 className="font-serif text-5xl md:text-6xl text-white leading-tight mb-6 max-w-3xl">
-              A care provider built on dignity, trust, and genuine compassion.
+            <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl text-white leading-[1.05] mb-8 max-w-3xl">
+              We are a care provider.<br />
+              <em className="text-[#D4A855] not-italic">Not a care factory.</em>
             </h1>
-            <p className="text-white/60 text-xl leading-relaxed max-w-2xl">
-              We're a locally run team in Slough, Berkshire — not a national call centre. Here's who we are, what we stand for, and why families trust us.
+            <p className="text-white/60 text-xl leading-relaxed max-w-2xl mb-8">
+              Wesleyan Care is a privately run team based in Slough. We specialise in supporting adults with complex needs — and we've been doing it for over a decade.
             </p>
+            <hr className="border-white/10" />
           </Reveal>
         </div>
       </section>
 
       {/* ── MISSION ───────────────────────────────────── */}
-      <section className="py-24 md:py-32">
-        <div className="max-w-6xl mx-auto px-5 grid md:grid-cols-2 gap-16 items-center">
+      <section className="py-24 md:py-32 bg-white">
+        <div className="max-w-6xl mx-auto px-5 grid md:grid-cols-2 gap-16 items-start">
+          {/* Left: editorial blockquote */}
           <Reveal>
-            <div className="relative">
-              <div className="aspect-square rounded-2xl bg-gradient-to-br from-[#1B2A4A] to-[#2d4070] flex flex-col items-center justify-center text-white p-14 shadow-2xl">
-                <Heart size={64} className="text-[#D4A855] mb-6 opacity-80" />
-                <p className="font-serif italic text-2xl text-center leading-relaxed text-white/85">
-                  "We believe that inviting someone into your home is one of the most significant decisions a family can make. We don't take that lightly."
+            <div>
+              <blockquote className="border-l-4 border-[#D4A855] pl-8 mb-10">
+                <p className="font-serif text-2xl md:text-3xl text-[#1B2A4A] leading-snug">
+                  "Inviting someone into your home is one of the most significant decisions a family can make. We don't take that lightly."
                 </p>
-              </div>
-              <div className="absolute -bottom-6 -right-6 bg-[#D4A855] rounded-2xl p-6 shadow-xl">
-                <p className="text-white font-serif text-3xl font-bold">10+</p>
-                <p className="text-white/80 text-sm mt-1">Years in Berkshire</p>
-              </div>
+              </blockquote>
+              <p className="text-sm text-gray-400 pl-8">Wesleyan Care, founded in Slough</p>
             </div>
           </Reveal>
 
-          <div>
-            <Reveal>
-              <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#D4A855] mb-4">Our Mission</p>
-              <h2 className="font-serif text-4xl md:text-5xl text-[#1B2A4A] leading-tight mb-6">
-                Enhancing quality of life through real, human connection.
-              </h2>
-            </Reveal>
-            <Reveal delay={100}>
-              <p className="text-gray-500 text-lg leading-relaxed mb-5">
-                Wesleyan Care was founded in Slough on a simple belief: that everyone deserves care that respects their dignity, reflects their individuality, and genuinely improves their daily life.
+          {/* Right: prose */}
+          <Reveal delay={120}>
+            <div className="space-y-5 text-gray-600 text-lg leading-relaxed">
+              <p>
+                Wesleyan Care was founded on a straightforward belief: that people with complex care needs deserve support that is consistent, attentive, and genuinely adapted to them. Not a rigid package that suits the provider.
               </p>
-              <p className="text-gray-500 text-lg leading-relaxed mb-5">
-                We specialise in supporting adults with complex care needs — including those living with dementia, mental health challenges, cardiac conditions, and spinal injuries. Our approach is always to start by listening.
+              <p>
+                We specialise in dementia care, mental health support, cardiac and spinal injury care, palliative care, and home and personal care. Our team has built experience in these areas over many years of real, day-to-day work with clients and their families.
               </p>
-              <p className="text-gray-500 text-lg leading-relaxed mb-8">
-                Whether we're providing daily personal care, overnight support, or specialist intervention, our goal is the same: to help people live safely, comfortably, and as independently as possible in their own homes.
+              <p>
+                Every carer we place is supervised, trained, and supported. When things change — and they do — we respond quickly and without fuss. That's what being a local, independent provider actually means.
               </p>
-            </Reveal>
-            <Reveal delay={150}>
-              <Link to="/contact" className="inline-flex items-center gap-2 bg-[#1B2A4A] hover:bg-[#243860] text-white px-7 py-3.5 rounded-full font-semibold transition-colors">
-                Talk to our team <ArrowRight size={16} />
-              </Link>
-            </Reveal>
-          </div>
+              <div className="pt-4">
+                <Link to="/contact" className="inline-flex items-center gap-2 font-semibold text-[#1B2A4A] border-b-2 border-[#D4A855] pb-0.5 hover:text-[#D4A855] transition-colors text-sm">
+                  Talk to our team <ArrowRight size={14} />
+                </Link>
+              </div>
+            </div>
+          </Reveal>
         </div>
       </section>
 
       {/* ── VALUES ────────────────────────────────────── */}
-      <section className="py-24 bg-white border-y border-gray-100">
+      <section className="py-24 bg-[#FAF7F2] border-y border-gray-200">
         <div className="max-w-6xl mx-auto px-5">
           <Reveal>
-            <div className="max-w-2xl mb-14">
-              <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#D4A855] mb-4">What We Stand For</p>
-              <h2 className="font-serif text-4xl md:text-5xl text-[#1B2A4A] leading-tight">
-                Our values aren't just words on a wall.
-              </h2>
-            </div>
+            <h2 className="font-serif text-4xl md:text-5xl text-[#1B2A4A] leading-tight mb-14 max-w-xl">
+              What we actually stand for.
+            </h2>
           </Reveal>
-
-          <div className="grid sm:grid-cols-2 gap-6">
+          <div className="grid md:grid-cols-2 gap-x-16 gap-y-10">
             {VALUES.map((v, i) => (
               <Reveal key={i} delay={i * 80}>
-                <div className="bg-[#FAF7F2] rounded-2xl p-8 border border-gray-100 hover:shadow-md transition-shadow">
-                  <div className="w-12 h-12 rounded-xl bg-[#7BA68D]/10 text-[#7BA68D] flex items-center justify-center mb-5">
-                    <v.icon size={22} />
-                  </div>
-                  <h3 className="font-bold text-xl mb-3">{v.title}</h3>
+                <div>
+                  <p className="font-bold text-[#1B2A4A] text-lg mb-2">{v.title}</p>
                   <p className="text-gray-500 leading-relaxed">{v.desc}</p>
                 </div>
               </Reveal>
@@ -112,53 +86,50 @@ export default function About() {
         </div>
       </section>
 
-      {/* ── OUR STORY ─────────────────────────────────── */}
-      <section className="py-24 md:py-32">
-        <div className="max-w-6xl mx-auto px-5">
+      {/* ── EXPERIENCE ────────────────────────────────── */}
+      <section className="py-24 md:py-32 bg-white">
+        <div className="max-w-6xl mx-auto px-5 grid md:grid-cols-2 gap-16 items-start">
           <Reveal>
-            <div className="max-w-2xl mb-14">
-              <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#D4A855] mb-4">Our Journey</p>
-              <h2 className="font-serif text-4xl md:text-5xl text-[#1B2A4A] leading-tight">
-                Ten years of putting people first.
-              </h2>
+            <div>
+              <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#D4A855] mb-6">Our Background</p>
+              <p className="font-serif text-4xl text-[#1B2A4A] leading-tight">Over a decade of complex care in Berkshire.</p>
             </div>
           </Reveal>
-
-          <div className="relative pl-8 border-l-2 border-gray-200 space-y-12">
-            {TIMELINE.map((item, i) => (
-              <Reveal key={i} delay={i * 100}>
-                <div className="relative">
-                  <div className="absolute -left-[2.85rem] w-5 h-5 rounded-full bg-[#D4A855] border-4 border-white shadow" />
-                  <p className="text-xs font-bold uppercase tracking-widest text-[#D4A855] mb-2">{item.year}</p>
-                  <h3 className="font-bold text-xl text-[#1B2A4A] mb-2">{item.title}</h3>
-                  <p className="text-gray-500 leading-relaxed max-w-xl">{item.desc}</p>
-                </div>
-              </Reveal>
-            ))}
-          </div>
+          <Reveal delay={120}>
+            <div className="space-y-5 text-gray-600 text-lg leading-relaxed">
+              <p>
+                We have been supporting adults with complex care needs in Slough and across Berkshire for over ten years. In that time we've worked with hundreds of families — through dementia diagnoses, hospital discharges, mental health crises, and end-of-life care.
+              </p>
+              <p>
+                That experience shapes how we approach every new client. We know what good care looks like in practice, not just in theory. We know the things that matter to families — consistency of carer, honest communication, and not having to fight to get things changed when they're not working.
+              </p>
+              <p>
+                We have built a team who reflect those values. People who stay, who build relationships with clients, and who understand that care work is skilled work that deserves to be done properly.
+              </p>
+            </div>
+          </Reveal>
         </div>
       </section>
 
-      {/* ── WHAT TO EXPECT ────────────────────────────── */}
-      <section className="py-24 bg-[#FAF7F2]">
+      {/* ── GETTING STARTED ───────────────────────────── */}
+      <section className="py-24 bg-[#FAF7F2] border-y border-gray-200">
         <div className="max-w-6xl mx-auto px-5">
           <Reveal>
-            <div className="max-w-2xl mb-12">
-              <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#D4A855] mb-4">Getting Started</p>
-              <h2 className="font-serif text-4xl text-[#1B2A4A] leading-tight">What to expect when you contact us.</h2>
-            </div>
+            <h2 className="font-serif text-4xl md:text-5xl text-[#1B2A4A] leading-tight mb-16 max-w-xl">
+              What happens when you contact us.
+            </h2>
           </Reveal>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-12">
             {[
-              { step: '01', title: 'Initial conversation', desc: 'Call or email us for a free, informal chat. We\'ll listen to your situation and answer any questions with no pressure at all.' },
-              { step: '02', title: 'Care assessment', desc: 'We visit you at home to fully understand your needs, preferences, and daily routine — and discuss what a care plan might look like.' },
-              { step: '03', title: 'Care begins', desc: 'We match you with the right carer, introduce them before care starts, and stay in regular contact to make sure everything is working well.' },
-            ].map((item, i) => (
+              { n: '01', title: 'A real conversation', desc: 'You speak to someone on our team — not a form or a chatbot. We listen to your situation and answer questions honestly. No sales pitch.' },
+              { n: '02', title: 'A home assessment',   desc: 'We visit you at home to understand your needs properly: your routine, your preferences, the things that matter most to you day to day.' },
+              { n: '03', title: 'Care that fits',      desc: 'We match you with the right carer, introduce them before care starts, and check in regularly. If anything needs adjusting, we adjust it.' },
+            ].map((step, i) => (
               <Reveal key={i} delay={i * 100}>
-                <div className="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm">
-                  <p className="font-serif text-4xl font-bold text-[#D4A855]/30 mb-4">{item.step}</p>
-                  <h3 className="font-bold text-lg mb-3">{item.title}</h3>
-                  <p className="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
+                <div>
+                  <p className="font-serif text-6xl text-[#D4A855]/20 font-bold leading-none mb-5 select-none">{step.n}</p>
+                  <h3 className="font-bold text-xl text-[#1B2A4A] mb-3">{step.title}</h3>
+                  <p className="text-gray-500 leading-relaxed">{step.desc}</p>
                 </div>
               </Reveal>
             ))}
@@ -168,18 +139,19 @@ export default function About() {
 
       {/* ── CTA ───────────────────────────────────────── */}
       <section className="py-24 bg-[#1B2A4A]">
-        <div className="max-w-4xl mx-auto px-5 text-center">
+        <div className="max-w-6xl mx-auto px-5 grid md:grid-cols-2 gap-12 items-center">
           <Reveal>
-            <h2 className="font-serif text-4xl md:text-5xl text-white mb-6">Ready to find out more?</h2>
-            <p className="text-white/60 text-lg mb-10 max-w-xl mx-auto">
-              We'd love to have a conversation about how we can support you or your loved one. No obligation, no pressure.
-            </p>
-            <div className="flex flex-wrap gap-4 justify-center">
+            <h2 className="font-serif text-4xl md:text-5xl text-white leading-tight">
+              Ready to have a conversation?
+            </h2>
+          </Reveal>
+          <Reveal delay={100}>
+            <div className="flex flex-wrap gap-4">
               <a href="tel:01753424473" className="inline-flex items-center gap-2 bg-[#D4A855] hover:bg-[#c09040] text-white px-8 py-4 rounded-full font-semibold transition-colors">
-                <Phone size={16} /> Call 01753 424 473
+                <Phone size={16} /> 01753 424 473
               </a>
-              <Link to="/services" className="inline-flex items-center gap-2 border-2 border-white/30 hover:border-white text-white px-8 py-4 rounded-full font-semibold transition-all">
-                View our services <ArrowRight size={16} />
+              <Link to="/services" className="inline-flex items-center gap-2 border border-white/30 hover:border-white text-white px-8 py-4 rounded-full font-semibold transition-colors">
+                View our services <ArrowRight size={15} />
               </Link>
             </div>
           </Reveal>
