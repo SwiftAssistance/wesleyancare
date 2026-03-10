@@ -5,7 +5,7 @@ const NAV_LINKS = [
   { name: 'Home',     to: '/' },
   { name: 'About',    to: '/about' },
   { name: 'Services', to: '/services' },
-  { name: 'Funding',  to: '/funding' },
+  { name: 'Blogs',    to: '/blogs' },
   { name: 'Contact',  to: '/contact' },
 ];
 

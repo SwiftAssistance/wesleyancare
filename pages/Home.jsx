@@ -186,28 +186,28 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── FUNDING TEASER ────────────────────────────── */}
+      {/* ── BLOG TEASER ──────────────────────────────── */}
       <section className="py-24 bg-[#1B2A4A]">
         <div className="max-w-6xl mx-auto px-5 grid md:grid-cols-2 gap-16 items-center">
           <Reveal>
             <div>
-              <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#D4A855] mb-6">Funding Your Care</p>
+              <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#D4A855] mb-6">From Our Blog</p>
               <h2 className="font-serif text-4xl md:text-5xl text-white leading-tight mb-6">
-                You may be entitled to Direct Payments.
+                Advice, insights & updates.
               </h2>
               <p className="text-white/60 text-lg leading-relaxed mb-8">
-                If your local council assesses you as needing care, you could receive Direct Payments to choose and fund your own provider — including Wesleyan Care. Many families in Slough are eligible but never claim.
+                Practical guidance for families navigating care — from understanding your options to supporting a loved one at home. Written by our team in Slough.
               </p>
-              <Link to="/funding" className="inline-flex items-center gap-2 bg-[#D4A855] hover:bg-[#c09040] text-white px-7 py-3.5 rounded-full font-semibold transition-colors text-sm">
-                Read about funding options <ArrowRight size={15} />
+              <Link to="/blogs" className="inline-flex items-center gap-2 bg-[#D4A855] hover:bg-[#c09040] text-white px-7 py-3.5 rounded-full font-semibold transition-colors text-sm">
+                Read our latest posts <ArrowRight size={15} />
               </Link>
             </div>
           </Reveal>
           <Reveal delay={120}>
             <div className="space-y-5 text-white/70 text-lg leading-relaxed">
-              <p><strong className="text-white font-semibold">It won't affect your benefits.</strong> Direct Payments are not counted as income, so they don't reduce Universal Credit, Housing Benefit, or Pension Credit.</p>
-              <p><strong className="text-white font-semibold">You choose the provider.</strong> The money is yours to spend on care you actually want — not what the council arranges for you.</p>
-              <p><strong className="text-white font-semibold">We can guide you through it.</strong> The application process is straightforward. Call us and we'll explain what to ask for.</p>
+              <p><strong className="text-white font-semibold">Understanding dementia care.</strong> What to look for, what questions to ask, and how to support someone living with dementia at home.</p>
+              <p><strong className="text-white font-semibold">Choosing the right provider.</strong> A straightforward guide to finding a care provider that genuinely fits your family's needs.</p>
+              <p><strong className="text-white font-semibold">Looking after yourself too.</strong> Caring for a family member is demanding. Practical steps to protect your own wellbeing while supporting theirs.</p>
             </div>
           </Reveal>
         </div>
