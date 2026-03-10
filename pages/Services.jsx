@@ -1,9 +1,10 @@
 import { Link } from 'react-router-dom';
 import {
   Brain, Heart, Activity, Stethoscope, HandHeart,
-  Home as HomeIcon, ArrowRight, Phone,
+  Home as HomeIcon, ArrowRight, Phone, CheckCircle2,
 } from 'lucide-react';
 import Reveal from '../components/Reveal.jsx';
+import Accordion from '../components/Accordion.jsx';
 
 const SERVICES = [
   {
@@ -86,6 +87,15 @@ const SERVICES = [
   },
 ];
 
+const FAQS = [
+  { q: 'How quickly can care start?',                          a: 'In most cases, we can begin care within 48–72 hours of an initial assessment. For urgent situations — such as hospital discharges — we can often arrange same-day or next-day start. Call us and we\'ll tell you what\'s realistic for your situation.' },
+  { q: 'Can I choose the times and days of visits?',           a: 'Yes. Care schedules are built around your routine, not ours. Whether you need early morning support, evening visits, or weekend care, we\'ll work with you to find a pattern that fits.' },
+  { q: 'Will I have the same carer each time?',                a: 'Consistency is a core part of how we work. We assign a small, regular team to every client. You\'ll know who is coming and when. If a carer is unavailable, we\'ll let you know in advance and send someone your team already knows.' },
+  { q: 'Do you accept Direct Payments?',                       a: 'Yes. If your local council has approved you for Direct Payments, you can use them to pay for Wesleyan Care. We work with Direct Payments clients regularly and can help you understand how to allocate your budget.' },
+  { q: 'What if my needs change?',                             a: 'Care plans are reviewed regularly and adjusted without bureaucracy. If your condition changes, your hours need increasing, or something isn\'t working — we respond quickly. You don\'t need to go through a formal process to make a change.' },
+  { q: 'Are your carers trained for specialist conditions?',    a: 'Yes. All carers receive mandatory training, and those working with clients who have dementia, mental health conditions, cardiac needs, or spinal injuries receive additional specialist modules. Training is ongoing, not a one-off.' },
+];
+
 export default function Services() {
   return (
     <>
@@ -104,12 +114,12 @@ export default function Services() {
             <p className="text-white/60 text-xl leading-relaxed max-w-2xl mb-6">
               Private and self-funded care, delivered across Slough and Berkshire. Direct Payments accepted.
             </p>
-            <div className="flex items-center gap-6 text-sm text-white/40 font-medium">
-              <span>Private · self-funded</span>
+            <div className="flex flex-wrap items-center gap-4 text-sm text-white/40 font-medium">
+              <span className="flex items-center gap-2"><CheckCircle2 size={14} className="text-[#D4A855]" /> Private & self-funded</span>
               <span className="text-white/20">·</span>
-              <span>Flexible hours — 1hr visits to live-in</span>
+              <span className="flex items-center gap-2"><CheckCircle2 size={14} className="text-[#D4A855]" /> 1hr visits to live-in</span>
               <span className="text-white/20">·</span>
-              <span>Slough & Berkshire</span>
+              <span className="flex items-center gap-2"><CheckCircle2 size={14} className="text-[#D4A855]" /> Slough & Berkshire</span>
             </div>
           </Reveal>
         </div>
@@ -122,7 +132,6 @@ export default function Services() {
             <Reveal key={i} delay={50}>
               <div className="bg-white border border-gray-100 hover:border-[#D4A855]/30 hover:shadow-md transition-all overflow-hidden">
                 <div className="grid md:grid-cols-5">
-                  {/* Left */}
                   <div className="md:col-span-2 p-8 md:p-10 border-b md:border-b-0 md:border-r border-gray-100">
                     <div className="w-10 h-10 rounded-lg bg-[#1B2A4A]/5 text-[#1B2A4A] flex items-center justify-center mb-6">
                       <s.icon size={20} />
@@ -133,7 +142,6 @@ export default function Services() {
                       Enquire <ArrowRight size={12} />
                     </Link>
                   </div>
-                  {/* Right */}
                   <div className="md:col-span-3 p-8 md:p-10 bg-[#FAF7F2]">
                     <p className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-6">This service includes</p>
                     <div className="grid sm:grid-cols-2 gap-y-3 gap-x-8">
@@ -149,6 +157,23 @@ export default function Services() {
               </div>
             </Reveal>
           ))}
+        </div>
+      </section>
+
+      {/* ── FAQ ───────────────────────────────────────── */}
+      <section className="py-24 md:py-32 bg-white border-t border-gray-200">
+        <div className="max-w-4xl mx-auto px-5">
+          <Reveal>
+            <div className="text-center mb-14">
+              <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#D4A855] mb-4">Common Questions</p>
+              <h2 className="font-serif text-4xl md:text-5xl text-[#1B2A4A] leading-tight">
+                Questions families ask us.
+              </h2>
+            </div>
+          </Reveal>
+          <Reveal delay={80}>
+            <Accordion items={FAQS} />
+          </Reveal>
         </div>
       </section>
 

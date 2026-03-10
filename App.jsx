@@ -4,7 +4,8 @@ import Footer from './components/Footer.jsx';
 import Home    from './pages/Home.jsx';
 import About   from './pages/About.jsx';
 import Services from './pages/Services.jsx';
-import Blogs   from './pages/Blogs.jsx';
+import Blogs    from './pages/Blogs.jsx';
+import BlogPost from './pages/BlogPost.jsx';
 import Contact  from './pages/Contact.jsx';
 
 export default function App() {
@@ -26,7 +27,8 @@ export default function App() {
             <Route path="/"         element={<Home />} />
             <Route path="/about"    element={<About />} />
             <Route path="/services" element={<Services />} />
-            <Route path="/blogs"    element={<Blogs />} />
+            <Route path="/blogs"      element={<Blogs />} />
+            <Route path="/blogs/:slug" element={<BlogPost />} />
             <Route path="/contact"  element={<Contact />} />
             <Route path="*"         element={<Navigate to="/" replace />} />
           </Routes>

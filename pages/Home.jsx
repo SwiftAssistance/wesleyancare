@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, Phone, MapPin } from 'lucide-react';
+import { ArrowRight, Phone, MapPin, Shield, Users, Clock, HeartHandshake } from 'lucide-react';
 import Reveal from '../components/Reveal.jsx';
+import POSTS from '../data/posts.js';
 
 const SERVICES_PREVIEW = [
   { title: 'Dementia Care',         desc: 'Consistent, patient support for individuals living with dementia — building routine and calm in familiar surroundings.' },
@@ -24,7 +25,16 @@ const STATS = [
   { value: '5★',   label: 'Consistently rated' },
 ];
 
+const WHY_US = [
+  { icon: Users,          title: 'Consistent carers',    desc: 'A small, regular team — not a revolving door of strangers. Your carer knows you, your routine, and what matters.' },
+  { icon: Shield,         title: 'Fully vetted & trained', desc: 'Every carer is DBS-checked, reference-verified, and trained before they step into your home.' },
+  { icon: Clock,          title: 'Flexible hours',       desc: 'From one-hour morning visits to full-time live-in care. We build around your schedule, not ours.' },
+  { icon: HeartHandshake, title: 'Locally run',          desc: 'Based in Slough, not a national franchise. When you call, you speak to someone who makes decisions.' },
+];
+
 export default function Home() {
+  const latestPosts = POSTS.slice(0, 3);
+
   return (
     <>
       {/* ── HERO ──────────────────────────────────────── */}
@@ -32,7 +42,6 @@ export default function Home() {
         <div className="absolute inset-0 opacity-[0.025]" style={{ backgroundImage: 'radial-gradient(#1B2A4A 1px, transparent 1px)', backgroundSize: '30px 30px' }} />
 
         <div className="relative max-w-6xl mx-auto px-5 py-24 md:py-32 grid md:grid-cols-2 gap-12 items-center w-full">
-          {/* Left: typographic hero */}
           <div>
             <div className="inline-flex items-center gap-2 text-[#5a7e69] text-xs font-semibold uppercase tracking-wider mb-8">
               <MapPin size={13} /> Private Care · Slough & Berkshire
@@ -54,7 +63,6 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Right: grounded contact panel */}
           <Reveal>
             <div className="border border-[#1B2A4A]/12 rounded-2xl overflow-hidden bg-white shadow-sm">
               <div className="p-8 border-b border-gray-100">
@@ -101,7 +109,6 @@ export default function Home() {
       {/* ── ABOUT PREVIEW ─────────────────────────────── */}
       <section className="py-24 md:py-32 bg-white">
         <div className="max-w-6xl mx-auto px-5 grid md:grid-cols-2 gap-16 items-start">
-          {/* Left: pull quote */}
           <Reveal>
             <div>
               <p className="font-serif text-3xl md:text-4xl text-[#1B2A4A] leading-snug border-l-4 border-[#D4A855] pl-8">
@@ -110,7 +117,6 @@ export default function Home() {
             </div>
           </Reveal>
 
-          {/* Right: prose */}
           <Reveal delay={120}>
             <div>
               <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#D4A855] mb-6">Who We Are</p>
@@ -125,6 +131,33 @@ export default function Home() {
               </Link>
             </div>
           </Reveal>
+        </div>
+      </section>
+
+      {/* ── WHY CHOOSE US ─────────────────────────────── */}
+      <section className="py-24 bg-[#1B2A4A]">
+        <div className="max-w-6xl mx-auto px-5">
+          <Reveal>
+            <div className="text-center mb-16">
+              <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#D4A855] mb-4">Why Families Choose Us</p>
+              <h2 className="font-serif text-4xl md:text-5xl text-white leading-tight max-w-2xl mx-auto">
+                What makes Wesleyan Care different.
+              </h2>
+            </div>
+          </Reveal>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {WHY_US.map((item, i) => (
+              <Reveal key={i} delay={i * 80}>
+                <div className="text-center">
+                  <div className="w-14 h-14 rounded-full bg-white/10 text-[#D4A855] flex items-center justify-center mx-auto mb-5">
+                    <item.icon size={24} />
+                  </div>
+                  <h3 className="font-bold text-white text-lg mb-3">{item.title}</h3>
+                  <p className="text-white/50 text-sm leading-relaxed">{item.desc}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -186,43 +219,94 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── BLOG TEASER ──────────────────────────────── */}
-      <section className="py-24 bg-[#1B2A4A]">
-        <div className="max-w-6xl mx-auto px-5 grid md:grid-cols-2 gap-16 items-center">
+      {/* ── HOW IT WORKS ─────────────────────────────── */}
+      <section className="py-24 bg-[#FAF7F2] border-y border-gray-200">
+        <div className="max-w-6xl mx-auto px-5">
           <Reveal>
-            <div>
-              <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#D4A855] mb-6">From Our Blog</p>
-              <h2 className="font-serif text-4xl md:text-5xl text-white leading-tight mb-6">
-                Advice, insights & updates.
+            <div className="text-center mb-16">
+              <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#D4A855] mb-4">Getting Started</p>
+              <h2 className="font-serif text-4xl md:text-5xl text-[#1B2A4A] leading-tight max-w-xl mx-auto">
+                Three simple steps.
               </h2>
-              <p className="text-white/60 text-lg leading-relaxed mb-8">
-                Practical guidance for families navigating care — from understanding your options to supporting a loved one at home. Written by our team in Slough.
-              </p>
-              <Link to="/blogs" className="inline-flex items-center gap-2 bg-[#D4A855] hover:bg-[#c09040] text-white px-7 py-3.5 rounded-full font-semibold transition-colors text-sm">
-                Read our latest posts <ArrowRight size={15} />
-              </Link>
             </div>
           </Reveal>
-          <Reveal delay={120}>
-            <div className="space-y-5 text-white/70 text-lg leading-relaxed">
-              <p><strong className="text-white font-semibold">Understanding dementia care.</strong> What to look for, what questions to ask, and how to support someone living with dementia at home.</p>
-              <p><strong className="text-white font-semibold">Choosing the right provider.</strong> A straightforward guide to finding a care provider that genuinely fits your family's needs.</p>
-              <p><strong className="text-white font-semibold">Looking after yourself too.</strong> Caring for a family member is demanding. Practical steps to protect your own wellbeing while supporting theirs.</p>
+          <div className="grid md:grid-cols-3 gap-12">
+            {[
+              { n: '01', title: 'A real conversation', desc: 'You call or message us. We listen to your situation, answer questions honestly, and discuss what kind of support might help. No sales pitch.' },
+              { n: '02', title: 'A home assessment',   desc: 'We visit to understand your needs properly: your routine, your preferences, and the things that matter most day to day. Then we put together a plan.' },
+              { n: '03', title: 'Care that fits',      desc: 'We match you with the right carer, introduce them before care begins, and check in regularly. If anything needs adjusting, we adjust it.' },
+            ].map((step, i) => (
+              <Reveal key={i} delay={i * 100}>
+                <div className="text-center">
+                  <p className="font-serif text-6xl text-[#D4A855]/20 font-bold leading-none mb-5 select-none">{step.n}</p>
+                  <h3 className="font-bold text-xl text-[#1B2A4A] mb-3">{step.title}</h3>
+                  <p className="text-gray-500 leading-relaxed">{step.desc}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+          <Reveal delay={200}>
+            <div className="text-center mt-14">
+              <Link to="/about" className="inline-flex items-center gap-2 font-semibold text-[#1B2A4A] border-b-2 border-[#D4A855] pb-0.5 hover:text-[#D4A855] transition-colors text-sm">
+                Learn more about our process <ArrowRight size={14} />
+              </Link>
             </div>
           </Reveal>
         </div>
       </section>
 
+      {/* ── BLOG TEASER ──────────────────────────────── */}
+      <section className="py-24 md:py-32 bg-white">
+        <div className="max-w-6xl mx-auto px-5">
+          <Reveal>
+            <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14">
+              <div>
+                <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#D4A855] mb-4">From Our Blog</p>
+                <h2 className="font-serif text-4xl md:text-5xl text-[#1B2A4A] leading-tight max-w-xl">
+                  Advice for families navigating care.
+                </h2>
+              </div>
+              <Link to="/blogs" className="inline-flex items-center gap-2 font-semibold text-[#1B2A4A] border-b-2 border-[#D4A855] pb-0.5 hover:text-[#D4A855] transition-colors text-sm whitespace-nowrap">
+                View all posts <ArrowRight size={14} />
+              </Link>
+            </div>
+          </Reveal>
+          <div className="grid md:grid-cols-3 gap-8">
+            {latestPosts.map((post, i) => (
+              <Reveal key={post.slug} delay={i * 80}>
+                <Link to={`/blogs/${post.slug}`} className="group block border border-gray-100 hover:border-[#D4A855]/30 hover:shadow-md transition-all bg-white h-full">
+                  <div className="p-7">
+                    <div className="flex items-center gap-3 mb-4">
+                      <span className="text-[10px] font-bold uppercase tracking-widest text-[#D4A855] bg-[#D4A855]/10 px-3 py-1 rounded-full">
+                        {post.tag}
+                      </span>
+                      <span className="text-xs text-gray-400">{post.readTime}</span>
+                    </div>
+                    <h3 className="font-serif text-lg text-[#1B2A4A] leading-snug mb-3 group-hover:text-[#D4A855] transition-colors">
+                      {post.title}
+                    </h3>
+                    <p className="text-sm text-gray-500 leading-relaxed mb-5">{post.summary}</p>
+                    <span className="inline-flex items-center gap-1 text-xs font-bold uppercase tracking-widest text-gray-300 group-hover:text-[#D4A855] transition-colors">
+                      Read article <ArrowRight size={11} />
+                    </span>
+                  </div>
+                </Link>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── CONTACT CTA ───────────────────────────────── */}
-      <section className="py-24 md:py-32 bg-[#FAF7F2]">
+      <section className="py-24 md:py-32 bg-[#1B2A4A]">
         <div className="max-w-6xl mx-auto px-5 text-center">
           <Reveal>
-            <p className="text-xs font-bold uppercase tracking-[0.2em] text-gray-400 mb-6">Talk to Us</p>
-            <a href="tel:01753424473" className="block font-serif text-5xl md:text-7xl text-[#D4A855] hover:text-[#c09040] transition-colors leading-none tracking-tight mb-6">
+            <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#D4A855] mb-6">Talk to Us</p>
+            <a href="tel:01753424473" className="block font-serif text-5xl md:text-7xl text-white hover:text-[#D4A855] transition-colors leading-none tracking-tight mb-6">
               01753 424 473
             </a>
-            <p className="text-gray-500 text-lg mb-10">
-              Or <Link to="/contact" className="text-[#1B2A4A] font-semibold hover:text-[#D4A855] transition-colors underline underline-offset-4">send us a message</Link> — no obligation, no pressure.
+            <p className="text-white/50 text-lg mb-10">
+              Or <Link to="/contact" className="text-[#D4A855] font-semibold hover:text-white transition-colors underline underline-offset-4">send us a message</Link> — no obligation, no pressure.
             </p>
           </Reveal>
         </div>
