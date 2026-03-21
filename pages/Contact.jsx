@@ -22,10 +22,10 @@ export default function Contact() {
               <span>Contact</span>
             </div>
             <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl text-white leading-[1.05] mb-8 max-w-3xl">
-              Talk to us.
+              Talk to me.
             </h1>
             <p className="text-white/60 text-xl leading-relaxed max-w-2xl">
-              Whether you're ready to arrange care or just want to ask a question — we're here, we're local, and there's no pressure.
+              Whether you're ready to arrange care or just want to ask a question — I'm here, I'm local, and there's no pressure.
             </p>
           </Reveal>
         </div>
@@ -40,7 +40,7 @@ export default function Contact() {
                 <Phone size={16} className="text-[#D4A855]" />
               </div>
               <div>
-                <p className="text-xs font-bold uppercase tracking-widest text-white/40 mb-1">Call us</p>
+                <p className="text-xs font-bold uppercase tracking-widest text-white/40 mb-1">Call me</p>
                 <p className="text-white font-semibold">01753 424 473</p>
                 <p className="text-xs text-white/40 mt-0.5">Mon–Fri 8am–6pm · Sat 9am–1pm</p>
               </div>
@@ -50,7 +50,7 @@ export default function Contact() {
                 <Mail size={16} className="text-[#D4A855]" />
               </div>
               <div>
-                <p className="text-xs font-bold uppercase tracking-widest text-white/40 mb-1">Email us</p>
+                <p className="text-xs font-bold uppercase tracking-widest text-white/40 mb-1">Email me</p>
                 <p className="text-white font-semibold text-sm break-all">support@wesleyancare.onmicrosoft.com</p>
                 <p className="text-xs text-white/40 mt-0.5">Reply within 1 working day</p>
               </div>
@@ -60,7 +60,7 @@ export default function Contact() {
                 <MapPin size={16} className="text-[#D4A855]" />
               </div>
               <div>
-                <p className="text-xs font-bold uppercase tracking-widest text-white/40 mb-1">Visit us</p>
+                <p className="text-xs font-bold uppercase tracking-widest text-white/40 mb-1">Visit me</p>
                 <p className="text-white font-semibold">89 Whitby Road, Slough</p>
                 <p className="text-xs text-white/40 mt-0.5">SL1 3DR, Berkshire</p>
               </div>
@@ -81,10 +81,10 @@ export default function Contact() {
               </h2>
               <div className="space-y-5 text-gray-600 leading-relaxed text-base mb-10">
                 <p>
-                  When you get in touch, you'll speak with a real person on our team. We take the time to listen before we make any suggestions — because until we understand your situation, we can't tell you what's right for you.
+                  When you get in touch, you'll speak with me directly. I take the time to listen before I make any suggestions — because until I understand your situation, I can't tell you what's right for you.
                 </p>
                 <p>
-                  If you're just at the information-gathering stage, that's completely fine. We'd rather answer your questions honestly now than rush you into anything.
+                  If you're just at the information-gathering stage, that's completely fine. I'd rather answer your questions honestly now than rush you into anything.
                 </p>
               </div>
             </Reveal>
@@ -106,7 +106,7 @@ export default function Contact() {
                     <span>Sunday</span><span>Closed</span>
                   </div>
                 </div>
-                <p className="text-xs text-gray-400 mt-5 pt-5 border-t border-gray-200">For urgent care matters outside these hours, call our main number and leave a message.</p>
+                <p className="text-xs text-gray-400 mt-5 pt-5 border-t border-gray-200">For urgent care matters outside these hours, call my main number and leave a message.</p>
               </div>
             </Reveal>
 
@@ -117,7 +117,7 @@ export default function Contact() {
                   <p className="font-semibold text-[#1B2A4A] text-sm">Your enquiry is confidential</p>
                 </div>
                 <p className="text-sm text-gray-500 leading-relaxed">
-                  Everything you share with us is treated in confidence. We will never pass your details to third parties or contact you without your permission.
+                  Everything you share with me is treated in confidence. I will never pass your details to third parties or contact you without your permission.
                 </p>
               </div>
             </Reveal>
@@ -130,15 +130,15 @@ export default function Contact() {
                 <div className="border border-gray-100 bg-[#FAF7F2] p-12 text-center">
                   <CheckCircle2 size={40} className="text-[#7BA68D] mx-auto mb-5" />
                   <h3 className="font-serif text-2xl text-[#1B2A4A] mb-3">Thank you.</h3>
-                  <p className="text-gray-500 mb-6">We'll be back in touch within one working day. If it's urgent, call us on <strong className="text-[#1B2A4A]">01753 424 473</strong>.</p>
+                  <p className="text-gray-500 mb-6">I'll be back in touch within one working day. If it's urgent, call me on <strong className="text-[#1B2A4A]">01753 424 473</strong>.</p>
                   <Link to="/" className="inline-flex items-center gap-2 text-sm font-semibold text-[#D4A855] hover:text-[#c09040] transition-colors">
                     Back to homepage <ArrowRight size={14} />
                   </Link>
                 </div>
               ) : (
                 <>
-                  <h3 className="font-serif text-3xl text-[#1B2A4A] mb-2">Send us a message</h3>
-                  <p className="text-sm text-gray-400 mb-8">We reply within one working day.</p>
+                  <h3 className="font-serif text-3xl text-[#1B2A4A] mb-2">Send me a message</h3>
+                  <p className="text-sm text-gray-400 mb-8">I reply within one working day.</p>
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div className="grid sm:grid-cols-2 gap-5">
                       <div>
@@ -186,7 +186,7 @@ export default function Contact() {
                       <label className="block text-xs font-bold uppercase tracking-widest text-gray-500 mb-2">Your Message *</label>
                       <textarea
                         name="message" required value={form.message} onChange={handleChange}
-                        rows={5} placeholder="Tell us about your situation and what you're looking for..."
+                        rows={5} placeholder="Tell me about your situation and what you're looking for..."
                         className="w-full border border-gray-200 px-4 py-3 text-sm text-[#1B2A4A] focus:outline-none focus:border-[#D4A855] transition-colors placeholder:text-gray-300 resize-none rounded-none bg-white"
                       />
                     </div>
@@ -219,7 +219,7 @@ export default function Contact() {
                 </p>
               </div>
               <Link to="/services" className="inline-flex items-center gap-2 text-sm font-semibold text-[#1B2A4A] hover:text-[#D4A855] transition-colors whitespace-nowrap">
-                View our services <ArrowRight size={14} />
+                View my services <ArrowRight size={14} />
               </Link>
             </div>
           </Reveal>

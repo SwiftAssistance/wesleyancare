@@ -93,7 +93,7 @@ export default function BlogPost() {
               <div className="bg-[#FAF7F2] border border-gray-100 p-8 md:p-10">
                 <p className="font-serif text-xl text-[#1B2A4A] mb-3">Need to talk this through?</p>
                 <p className="text-gray-500 leading-relaxed mb-6">
-                  If anything in this article raised questions about your own situation, we're happy to have an honest conversation — no obligation.
+                  If anything in this article raised questions about your own situation, I'm happy to have an honest conversation — no obligation.
                 </p>
                 <div className="flex flex-wrap gap-4">
                   <a href="tel:01753424473" className="inline-flex items-center gap-2 bg-[#D4A855] hover:bg-[#c09040] text-white px-6 py-3 rounded-full font-semibold transition-colors text-sm">

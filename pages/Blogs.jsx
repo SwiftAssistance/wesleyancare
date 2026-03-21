@@ -22,7 +22,7 @@ export default function Blogs() {
               Advice, insights & updates.
             </h1>
             <p className="text-white/60 text-xl leading-relaxed max-w-2xl">
-              Practical guidance for families navigating care — written by our team in Slough. No jargon, no sales pitch, just honest information.
+              Practical guidance for families navigating care — written by me in Slough. No jargon, no sales pitch, just honest information.
             </p>
           </Reveal>
         </div>
@@ -107,13 +107,13 @@ export default function Blogs() {
         <div className="max-w-6xl mx-auto px-5 grid md:grid-cols-2 gap-12 items-center">
           <Reveal>
             <h2 className="font-serif text-4xl md:text-5xl text-[#1B2A4A] leading-tight">
-              Have a question we haven't covered?
+              Have a question I haven't covered?
             </h2>
           </Reveal>
           <Reveal delay={100}>
             <div>
               <p className="text-gray-500 text-lg leading-relaxed mb-8">
-                If there's a topic you'd like us to write about, or if you'd like to speak to our team directly about any of the subjects covered here, we're happy to help.
+                If there's a topic you'd like me to write about, or if you'd like to speak to me directly about any of the subjects covered here, I'm happy to help.
               </p>
               <div className="flex flex-wrap gap-4">
                 <Link to="/contact" className="inline-flex items-center gap-2 bg-[#1B2A4A] hover:bg-[#243860] text-white px-8 py-4 rounded-full font-semibold transition-colors shadow-sm">

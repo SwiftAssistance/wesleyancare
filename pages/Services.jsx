@@ -10,7 +10,7 @@ const SERVICES = [
   {
     icon: Brain,
     title: 'Dementia Care',
-    intro: 'Living with dementia is different for everyone. Our carers bring consistency — the same faces, the same routines, the same patient presence. We work alongside families, not around them.',
+    intro: 'Living with dementia is different for everyone. My carers bring consistency — the same faces, the same routines, the same patient presence. I work alongside families, not around them.',
     includes: [
       'Personalised daily structure and routine',
       'Cognitive engagement and meaningful activity',
@@ -23,7 +23,7 @@ const SERVICES = [
   {
     icon: Heart,
     title: 'Palliative Care',
-    intro: 'End-of-life care should be about the person, not logistics. We work alongside GPs and medical teams to make sure every moment is as comfortable and peaceful as possible — for the individual and their family.',
+    intro: 'End-of-life care should be about the person, not logistics. I work alongside GPs and medical teams to make sure every moment is as comfortable and peaceful as possible — for the individual and their family.',
     includes: [
       'Coordination with GP and medical teams',
       'Comfort and symptom management support',
@@ -36,7 +36,7 @@ const SERVICES = [
   {
     icon: Activity,
     title: 'Cardiac Care',
-    intro: 'Managing a heart condition at home takes careful attention to medication, routine, and physical limits. Our carers are trained to support safely and to keep families and healthcare providers informed.',
+    intro: 'Managing a heart condition at home takes careful attention to medication, routine, and physical limits. My carers are trained to support safely and to keep families and healthcare providers informed.',
     includes: [
       'Medication management and reminders',
       'Symptom monitoring and reporting',
@@ -49,7 +49,7 @@ const SERVICES = [
   {
     icon: Stethoscope,
     title: 'Spinal Injury Support',
-    intro: 'Skilled, attentive support for individuals living with spinal cord injuries. Our trained workers help clients maintain as much independence as possible, with care adapted as needs change over time.',
+    intro: 'Skilled, attentive support for individuals living with spinal cord injuries. My trained support workers help clients maintain as much independence as possible, with care adapted as needs change over time.',
     includes: [
       'Personal care and hygiene support',
       'Positioning and pressure care',
@@ -62,7 +62,7 @@ const SERVICES = [
   {
     icon: HandHeart,
     title: 'Mental Health Support',
-    intro: 'Consistent, non-judgemental support for adults managing mental health challenges. We focus on building routine and confidence at a pace the individual sets — not one imposed on them.',
+    intro: 'Consistent, non-judgemental support for adults managing mental health challenges. I focus on building routine and confidence at a pace the individual sets — not one imposed on them.',
     includes: [
       'Daily structure and routine support',
       'Medication prompting and management',
@@ -75,7 +75,7 @@ const SERVICES = [
   {
     icon: HomeIcon,
     title: 'Home & Personal Care',
-    intro: 'Practical, day-to-day support for people who need help at home. We offer flexible packages — from a one-hour morning visit to full daily care — built around your actual routine, not ours.',
+    intro: 'Practical, day-to-day support for people who need help at home. I offer flexible packages — from a one-hour morning visit to full daily care — built around your actual routine, not mine.',
     includes: [
       'Personal hygiene and grooming support',
       'Dressing and undressing assistance',
@@ -88,11 +88,11 @@ const SERVICES = [
 ];
 
 const FAQS = [
-  { q: 'How quickly can care start?',                          a: 'In most cases, we can begin care within 48–72 hours of an initial assessment. For urgent situations — such as hospital discharges — we can often arrange same-day or next-day start. Call us and we\'ll tell you what\'s realistic for your situation.' },
-  { q: 'Can I choose the times and days of visits?',           a: 'Yes. Care schedules are built around your routine, not ours. Whether you need early morning support, evening visits, or weekend care, we\'ll work with you to find a pattern that fits.' },
-  { q: 'Will I have the same carer each time?',                a: 'Consistency is a core part of how we work. We assign a small, regular team to every client. You\'ll know who is coming and when. If a carer is unavailable, we\'ll let you know in advance and send someone your team already knows.' },
-  { q: 'Do you accept Direct Payments?',                       a: 'Yes. If your local council has approved you for Direct Payments, you can use them to pay for Wesleyan Care. We work with Direct Payments clients regularly and can help you understand how to allocate your budget.' },
-  { q: 'What if my needs change?',                             a: 'Care plans are reviewed regularly and adjusted without bureaucracy. If your condition changes, your hours need increasing, or something isn\'t working — we respond quickly. You don\'t need to go through a formal process to make a change.' },
+  { q: 'How quickly can care start?',                          a: 'In most cases, I can begin care within 48–72 hours of an initial assessment. For urgent situations — such as hospital discharges — I can often arrange same-day or next-day start. Call me and I\'ll tell you what\'s realistic for your situation.' },
+  { q: 'Can I choose the times and days of visits?',           a: 'Yes. Care schedules are built around your routine, not mine. Whether you need early morning support, evening visits, or weekend care, I\'ll work with you to find a pattern that fits.' },
+  { q: 'Will I have the same carer each time?',                a: 'Consistency is a core part of how I work. I assign a small, regular team to every client. You\'ll know who is coming and when. If a carer is unavailable, I\'ll let you know in advance and send someone your team already knows.' },
+  { q: 'Do you accept Direct Payments?',                       a: 'Yes. If your local council has approved you for Direct Payments, you can use them to pay for Wesleyan Care. I work with Direct Payments clients regularly and can help you understand how to allocate your budget.' },
+  { q: 'What if my needs change?',                             a: 'Care plans are reviewed regularly and adjusted without bureaucracy. If your condition changes, your hours need increasing, or something isn\'t working — I respond quickly. You don\'t need to go through a formal process to make a change.' },
   { q: 'Are your carers trained for specialist conditions?',    a: 'Yes. All carers receive mandatory training, and those working with clients who have dementia, mental health conditions, cardiac needs, or spinal injuries receive additional specialist modules. Training is ongoing, not a one-off.' },
 ];
 
@@ -167,7 +167,7 @@ export default function Services() {
             <div className="text-center mb-14">
               <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#D4A855] mb-4">Common Questions</p>
               <h2 className="font-serif text-4xl md:text-5xl text-[#1B2A4A] leading-tight">
-                Questions families ask us.
+                Questions families ask me.
               </h2>
             </div>
           </Reveal>
@@ -184,7 +184,7 @@ export default function Services() {
             <div className="text-white">
               <h2 className="font-serif text-4xl md:text-5xl leading-tight mb-6">Not sure what you need?</h2>
               <p className="text-white/60 text-lg leading-relaxed">
-                Many of our clients come to us with needs that don't fit neatly into one category — and that's completely normal. We're experienced at working through that with families, building care plans that respond to the full picture rather than a single diagnosis. Call us for a free, informal conversation and we'll help you figure out what makes sense.
+                Many of my clients come to me with needs that don't fit neatly into one category — and that's completely normal. I'm experienced at working through that with families, building care plans that respond to the full picture rather than a single diagnosis. Call me for a free, informal conversation and I'll help you figure out what makes sense.
               </p>
             </div>
           </Reveal>

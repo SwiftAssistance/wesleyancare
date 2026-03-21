@@ -28,7 +28,7 @@ const STATS = [
 const WHY_US = [
   { icon: Users,          title: 'Consistent carers',    desc: 'A small, regular team — not a revolving door of strangers. Your carer knows you, your routine, and what matters.' },
   { icon: Shield,         title: 'Fully vetted & trained', desc: 'Every carer is DBS-checked, reference-verified, and trained before they step into your home.' },
-  { icon: Clock,          title: 'Flexible hours',       desc: 'From one-hour morning visits to full-time live-in care. We build around your schedule, not ours.' },
+  { icon: Clock,          title: 'Flexible hours',       desc: 'From one-hour morning visits to full-time live-in care. I build around your schedule, not mine.' },
   { icon: HeartHandshake, title: 'Locally run',          desc: 'Based in Slough, not a national franchise. When you call, you speak to someone who makes decisions.' },
 ];
 
@@ -51,14 +51,14 @@ export default function Home() {
               with <em className="text-[#D4A855] not-italic">listening.</em>
             </h1>
             <p className="text-lg text-gray-500 leading-relaxed mb-10 max-w-md">
-              We're a Slough-based private care provider supporting adults with complex needs — dementia, mental health, cardiac conditions, spinal injuries, and more. Every care plan is built around the individual, not a template.
+              I'm a Slough-based private care provider supporting adults with complex needs — dementia, mental health, cardiac conditions, spinal injuries, and more. Every care plan is built around the individual, not a template.
             </p>
             <div className="flex flex-wrap gap-4">
               <Link to="/contact" className="inline-flex items-center gap-2 bg-[#1B2A4A] hover:bg-[#243860] text-white px-8 py-4 rounded-full font-semibold transition-colors shadow-sm">
                 Get in touch <ArrowRight size={15} />
               </Link>
               <Link to="/services" className="inline-flex items-center gap-2 border border-[#1B2A4A]/25 text-[#1B2A4A] hover:border-[#1B2A4A] px-8 py-4 rounded-full font-semibold transition-colors">
-                Our services
+                My services
               </Link>
             </div>
           </div>
@@ -66,20 +66,20 @@ export default function Home() {
           <Reveal>
             <div className="border border-[#1B2A4A]/12 rounded-2xl overflow-hidden bg-white shadow-sm">
               <div className="p-8 border-b border-gray-100">
-                <p className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-3">Call us directly</p>
+                <p className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-3">Call me directly</p>
                 <a href="tel:01753424473" className="block font-serif text-4xl text-[#1B2A4A] hover:text-[#D4A855] transition-colors leading-none tracking-tight">
                   01753 424 473
                 </a>
                 <p className="text-sm text-gray-400 mt-2">Monday – Friday, 8am – 6pm</p>
               </div>
               <div className="p-8 border-b border-gray-100">
-                <p className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-3">Write to us</p>
+                <p className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-3">Write to me</p>
                 <a href="mailto:support@wesleyancare.onmicrosoft.com" className="text-sm text-[#1B2A4A] hover:text-[#D4A855] transition-colors break-all leading-relaxed">
                   support@wesleyancare.onmicrosoft.com
                 </a>
               </div>
               <div className="p-8 bg-[#FAF7F2]">
-                <p className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-3">Find us</p>
+                <p className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-3">Find me</p>
                 <p className="text-sm text-gray-600 leading-relaxed">89 Whitby Road<br />Slough, SL1 3DR</p>
                 <Link to="/contact" className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-widest text-[#D4A855] hover:text-[#c09040] transition-colors mt-4">
                   Send a message <ArrowRight size={12} />
@@ -112,22 +112,22 @@ export default function Home() {
           <Reveal>
             <div>
               <p className="font-serif text-3xl md:text-4xl text-[#1B2A4A] leading-snug border-l-4 border-[#D4A855] pl-8">
-                "Inviting someone into your home is one of the most significant decisions a family makes. We don't take that lightly."
+                "Inviting someone into your home is one of the most significant decisions a family makes. I don't take that lightly."
               </p>
             </div>
           </Reveal>
 
           <Reveal delay={120}>
             <div>
-              <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#D4A855] mb-6">Who We Are</p>
+              <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#D4A855] mb-6">Who I Am</p>
               <p className="text-gray-600 text-lg leading-relaxed mb-5">
-                Wesleyan Care is a privately run care provider based in Slough. We support adults with complex needs — including dementia, mental health challenges, cardiac conditions, and spinal injuries. We've been doing this for over ten years.
+                Wesleyan Care is a privately run care provider based in Slough. I support adults with complex needs — including dementia, mental health challenges, cardiac conditions, and spinal injuries. I've been doing this for over ten years.
               </p>
               <p className="text-gray-600 text-lg leading-relaxed mb-8">
-                We are a local team, not a national franchise. Every carer we place is fully vetted, trained, and regularly supervised. When your circumstances change, we adapt. When you have a concern, you speak to a person — not a call centre.
+                I am a local, independent provider, not a national franchise. Every carer I place is fully vetted, trained, and regularly supervised. When your circumstances change, I adapt. When you have a concern, you speak to me directly — not a call centre.
               </p>
               <Link to="/about" className="inline-flex items-center gap-2 font-semibold text-[#1B2A4A] border-b-2 border-[#D4A855] pb-0.5 hover:text-[#D4A855] transition-colors text-sm">
-                Learn more about us <ArrowRight size={14} />
+                Learn more about me <ArrowRight size={14} />
               </Link>
             </div>
           </Reveal>
@@ -139,7 +139,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-5">
           <Reveal>
             <div className="text-center mb-16">
-              <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#D4A855] mb-4">Why Families Choose Us</p>
+              <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#D4A855] mb-4">Why Families Choose Me</p>
               <h2 className="font-serif text-4xl md:text-5xl text-white leading-tight max-w-2xl mx-auto">
                 What makes Wesleyan Care different.
               </h2>
@@ -201,7 +201,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-5">
           <Reveal>
             <h2 className="font-serif text-4xl md:text-5xl text-[#1B2A4A] leading-tight mb-16 max-w-xl">
-              What families say about us.
+              What families say about me.
             </h2>
           </Reveal>
           <div className="grid md:grid-cols-3 gap-10 md:divide-x divide-gray-100">
@@ -232,9 +232,9 @@ export default function Home() {
           </Reveal>
           <div className="grid md:grid-cols-3 gap-12">
             {[
-              { n: '01', title: 'A real conversation', desc: 'You call or message us. We listen to your situation, answer questions honestly, and discuss what kind of support might help. No sales pitch.' },
-              { n: '02', title: 'A home assessment',   desc: 'We visit to understand your needs properly: your routine, your preferences, and the things that matter most day to day. Then we put together a plan.' },
-              { n: '03', title: 'Care that fits',      desc: 'We match you with the right carer, introduce them before care begins, and check in regularly. If anything needs adjusting, we adjust it.' },
+              { n: '01', title: 'A real conversation', desc: 'You call or message me. I listen to your situation, answer questions honestly, and discuss what kind of support might help. No sales pitch.' },
+              { n: '02', title: 'A home assessment',   desc: 'I visit to understand your needs properly: your routine, your preferences, and the things that matter most day to day. Then I put together a plan.' },
+              { n: '03', title: 'Care that fits',      desc: 'I match you with the right carer, introduce them before care begins, and check in regularly. If anything needs adjusting, I adjust it.' },
             ].map((step, i) => (
               <Reveal key={i} delay={i * 100}>
                 <div className="text-center">
@@ -248,7 +248,7 @@ export default function Home() {
           <Reveal delay={200}>
             <div className="text-center mt-14">
               <Link to="/about" className="inline-flex items-center gap-2 font-semibold text-[#1B2A4A] border-b-2 border-[#D4A855] pb-0.5 hover:text-[#D4A855] transition-colors text-sm">
-                Learn more about our process <ArrowRight size={14} />
+                Learn more about my process <ArrowRight size={14} />
               </Link>
             </div>
           </Reveal>
@@ -261,7 +261,7 @@ export default function Home() {
           <Reveal>
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14">
               <div>
-                <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#D4A855] mb-4">From Our Blog</p>
+                <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#D4A855] mb-4">From My Blog</p>
                 <h2 className="font-serif text-4xl md:text-5xl text-[#1B2A4A] leading-tight max-w-xl">
                   Advice for families navigating care.
                 </h2>
@@ -301,12 +301,12 @@ export default function Home() {
       <section className="py-24 md:py-32 bg-[#1B2A4A]">
         <div className="max-w-6xl mx-auto px-5 text-center">
           <Reveal>
-            <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#D4A855] mb-6">Talk to Us</p>
+            <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#D4A855] mb-6">Talk to Me</p>
             <a href="tel:01753424473" className="block font-serif text-5xl md:text-7xl text-white hover:text-[#D4A855] transition-colors leading-none tracking-tight mb-6">
               01753 424 473
             </a>
             <p className="text-white/50 text-lg mb-10">
-              Or <Link to="/contact" className="text-[#D4A855] font-semibold hover:text-white transition-colors underline underline-offset-4">send us a message</Link> — no obligation, no pressure.
+              Or <Link to="/contact" className="text-[#D4A855] font-semibold hover:text-white transition-colors underline underline-offset-4">send me a message</Link> — no obligation, no pressure.
             </p>
           </Reveal>
         </div>
