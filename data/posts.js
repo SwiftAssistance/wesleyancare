@@ -22,6 +22,7 @@ const POSTS = [
     date: '5 March 2026',
     readTime: '6 min read',
     author: 'Wesleyan Care Team',
+    coverImage: 'https://images.pexels.com/photos/8172269/pexels-photo-8172269.jpeg?auto=compress&cs=tinysrgb&w=1200',
     body: [
       { type: 'p', text: 'When a family member is diagnosed with dementia, the instinct is to do everything you can. But knowing where to start — and what actually helps — is harder than it sounds. This guide covers the practical things I\'ve learned from over a decade of supporting families in Slough and Berkshire.' },
       { type: 'h2', text: 'Routine is everything' },
@@ -59,6 +60,7 @@ const POSTS = [
     date: '21 February 2026',
     readTime: '5 min read',
     author: 'Wesleyan Care Team',
+    coverImage: 'https://images.pexels.com/photos/8439648/pexels-photo-8439648.jpeg?auto=compress&cs=tinysrgb&w=1200',
     body: [
       { type: 'p', text: 'Choosing a care provider is one of the most consequential decisions a family makes. And it\'s usually made under pressure — after a hospital discharge, a sudden decline, or when existing arrangements break down. This guide is designed to help you navigate that process with your eyes open.' },
       { type: 'h2', text: 'Start with what matters to you' },
@@ -96,6 +98,7 @@ const POSTS = [
     date: '8 February 2026',
     readTime: '4 min read',
     author: 'Wesleyan Care Team',
+    coverImage: 'https://images.pexels.com/photos/8088906/pexels-photo-8088906.jpeg?auto=compress&cs=tinysrgb&w=1200',
     body: [
       { type: 'p', text: 'If you\'re caring for a parent, partner, or family member, you\'re probably used to putting their needs first. That\'s natural. But over time, the physical and emotional toll adds up — and if you don\'t look after yourself, you won\'t be able to look after them.' },
       { type: 'h2', text: 'Recognise the signs of burnout' },
@@ -130,6 +133,7 @@ const POSTS = [
     date: '24 January 2026',
     readTime: '7 min read',
     author: 'Wesleyan Care Team',
+    coverImage: 'https://images.pexels.com/photos/7529994/pexels-photo-7529994.jpeg?auto=compress&cs=tinysrgb&w=1200',
     body: [
       { type: 'p', text: 'Mental health conditions affect every part of daily life — motivation, routine, personal care, social connection, even eating and sleeping. When someone is struggling, the right kind of support can be the difference between coping and spiralling. This post explains how structured home care helps.' },
       { type: 'h2', text: 'Why routine matters so much' },
@@ -160,6 +164,7 @@ const POSTS = [
     date: '10 January 2026',
     readTime: '5 min read',
     author: 'Wesleyan Care Team',
+    coverImage: 'https://images.pexels.com/photos/8949833/pexels-photo-8949833.jpeg?auto=compress&cs=tinysrgb&w=1200',
     body: [
       { type: 'p', text: 'Coming home after a heart attack, heart surgery, or a new diagnosis of heart failure is a vulnerable time. The hospital environment provided constant monitoring and reassurance. At home, suddenly you\'re on your own — and that can feel overwhelming for both the individual and their family.' },
       { type: 'h2', text: 'The first weeks at home' },
@@ -189,6 +194,7 @@ const POSTS = [
     date: '28 December 2025',
     readTime: '6 min read',
     author: 'Wesleyan Care Team',
+    coverImage: 'https://images.pexels.com/photos/6646917/pexels-photo-6646917.jpeg?auto=compress&cs=tinysrgb&w=1200',
     body: [
       { type: 'p', text: 'If your local council assesses you as needing care and support, they have a legal duty to offer you Direct Payments. This means the funding comes to you directly — and you choose who provides your care. Many families in Slough are eligible but never claim because they don\'t know the option exists.' },
       { type: 'h2', text: 'What are Direct Payments?' },

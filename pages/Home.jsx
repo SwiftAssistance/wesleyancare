@@ -110,10 +110,17 @@ export default function Home() {
       <section className="py-24 md:py-32 bg-white">
         <div className="max-w-6xl mx-auto px-5 grid md:grid-cols-2 gap-16 items-start">
           <Reveal>
-            <div>
-              <p className="font-serif text-3xl md:text-4xl text-[#1B2A4A] leading-snug border-l-4 border-[#D4A855] pl-8">
-                "Inviting someone into your home is one of the most significant decisions a family makes. I don't take that lightly."
-              </p>
+            <div className="relative overflow-hidden rounded-sm">
+              <img
+                src="https://images.pexels.com/photos/8088906/pexels-photo-8088906.jpeg?auto=compress&cs=tinysrgb&w=900"
+                alt="Elderly couple at home"
+                className="w-full aspect-[4/5] object-cover"
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-[#1B2A4A]/90 via-[#1B2A4A]/50 to-transparent p-8 pt-16">
+                <p className="font-serif text-xl md:text-2xl text-white leading-snug">
+                  "Inviting someone into your home is one of the most significant decisions a family makes. I don't take that lightly."
+                </p>
+              </div>
             </div>
           </Reveal>
 
