@@ -134,7 +134,12 @@ export default function About() {
           <Reveal>
             <div>
               <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#D4A855] mb-6">My Background</p>
-              <p className="font-serif text-4xl text-[#1B2A4A] leading-tight">Over a decade of complex care in Berkshire.</p>
+              <p className="font-serif text-4xl text-[#1B2A4A] leading-tight mb-8">Over a decade of complex care in Berkshire.</p>
+              <img
+                src="https://images.pexels.com/photos/8439648/pexels-photo-8439648.jpeg?auto=compress&cs=tinysrgb&w=900"
+                alt="Carer speaking with elderly clients at home"
+                className="w-full object-cover rounded-sm"
+              />
             </div>
           </Reveal>
           <Reveal delay={120}>

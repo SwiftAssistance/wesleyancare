@@ -10,6 +10,7 @@ const SERVICES = [
   {
     icon: Brain,
     title: 'Dementia Care',
+    img: 'https://images.pexels.com/photos/8172269/pexels-photo-8172269.jpeg?auto=compress&cs=tinysrgb&w=1200',
     intro: 'Living with dementia is different for everyone. My carers bring consistency — the same faces, the same routines, the same patient presence. I work alongside families, not around them.',
     includes: [
       'Personalised daily structure and routine',
@@ -23,6 +24,7 @@ const SERVICES = [
   {
     icon: Heart,
     title: 'Palliative Care',
+    img: 'https://images.pexels.com/photos/14441380/pexels-photo-14441380.jpeg?auto=compress&cs=tinysrgb&w=1200',
     intro: 'End-of-life care should be about the person, not logistics. I work alongside GPs and medical teams to make sure every moment is as comfortable and peaceful as possible — for the individual and their family.',
     includes: [
       'Coordination with GP and medical teams',
@@ -36,6 +38,7 @@ const SERVICES = [
   {
     icon: Activity,
     title: 'Cardiac Care',
+    img: 'https://images.pexels.com/photos/8949833/pexels-photo-8949833.jpeg?auto=compress&cs=tinysrgb&w=1200',
     intro: 'Managing a heart condition at home takes careful attention to medication, routine, and physical limits. My carers are trained to support safely and to keep families and healthcare providers informed.',
     includes: [
       'Medication management and reminders',
@@ -49,6 +52,7 @@ const SERVICES = [
   {
     icon: Stethoscope,
     title: 'Spinal Injury Support',
+    img: 'https://images.pexels.com/photos/18429373/pexels-photo-18429373.jpeg?auto=compress&cs=tinysrgb&w=1200',
     intro: 'Skilled, attentive support for individuals living with spinal cord injuries. My trained support workers help clients maintain as much independence as possible, with care adapted as needs change over time.',
     includes: [
       'Personal care and hygiene support',
@@ -62,6 +66,7 @@ const SERVICES = [
   {
     icon: HandHeart,
     title: 'Mental Health Support',
+    img: 'https://images.pexels.com/photos/7529994/pexels-photo-7529994.jpeg?auto=compress&cs=tinysrgb&w=1200',
     intro: 'Consistent, non-judgemental support for adults managing mental health challenges. I focus on building routine and confidence at a pace the individual sets — not one imposed on them.',
     includes: [
       'Daily structure and routine support',
@@ -75,6 +80,7 @@ const SERVICES = [
   {
     icon: HomeIcon,
     title: 'Home & Personal Care',
+    img: 'https://images.pexels.com/photos/8949908/pexels-photo-8949908.jpeg?auto=compress&cs=tinysrgb&w=1200',
     intro: 'Practical, day-to-day support for people who need help at home. I offer flexible packages — from a one-hour morning visit to full daily care — built around your actual routine, not mine.',
     includes: [
       'Personal hygiene and grooming support',
@@ -131,6 +137,11 @@ export default function Services() {
           {SERVICES.map((s, i) => (
             <Reveal key={i} delay={50}>
               <div className="bg-white border border-gray-100 hover:border-[#D4A855]/30 hover:shadow-md transition-all overflow-hidden">
+                {s.img && (
+                  <div className="aspect-[21/9] overflow-hidden">
+                    <img src={s.img} alt={s.title} className="w-full h-full object-cover" />
+                  </div>
+                )}
                 <div className="grid md:grid-cols-5">
                   <div className="md:col-span-2 p-8 md:p-10 border-b md:border-b-0 md:border-r border-gray-100">
                     <div className="w-10 h-10 rounded-lg bg-[#1B2A4A]/5 text-[#1B2A4A] flex items-center justify-center mb-6">

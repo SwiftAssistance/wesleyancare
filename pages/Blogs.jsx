@@ -35,13 +35,19 @@ export default function Blogs() {
           <Reveal>
             <Link to={`/blogs/${featured.slug}`} className="group block">
               <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
-                <div className="bg-[#1B2A4A] aspect-[4/3] md:aspect-auto md:h-full flex items-center justify-center rounded-sm overflow-hidden">
-                  <div className="text-center px-10 py-16">
-                    <span className="text-[10px] font-bold uppercase tracking-widest text-[#D4A855] bg-[#D4A855]/15 px-3 py-1 rounded-full">
-                      {featured.tag}
-                    </span>
-                    <p className="font-serif text-3xl text-white leading-snug mt-6">{featured.title}</p>
-                  </div>
+                <div className="aspect-[4/3] md:aspect-auto md:h-full rounded-sm overflow-hidden bg-[#1B2A4A] relative">
+                  {featured.coverImage ? (
+                    <img src={featured.coverImage} alt={featured.title} className="w-full h-full object-cover" />
+                  ) : (
+                    <div className="absolute inset-0 flex items-center justify-center text-center px-10">
+                      <div>
+                        <span className="text-[10px] font-bold uppercase tracking-widest text-[#D4A855] bg-[#D4A855]/15 px-3 py-1 rounded-full">
+                          {featured.tag}
+                        </span>
+                        <p className="font-serif text-3xl text-white leading-snug mt-6">{featured.title}</p>
+                      </div>
+                    </div>
+                  )}
                 </div>
                 <div>
                   <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#D4A855] mb-4">Latest Post</p>
@@ -73,7 +79,13 @@ export default function Blogs() {
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-gray-200">
               {rest.map((post, i) => (
                 <Reveal key={post.slug} delay={i * 60}>
-                  <Link to={`/blogs/${post.slug}`} className="group block bg-white p-8 h-full">
+                  <Link to={`/blogs/${post.slug}`} className="group block bg-white h-full">
+                    {post.coverImage && (
+                      <div className="aspect-[16/9] overflow-hidden">
+                        <img src={post.coverImage} alt={post.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                      </div>
+                    )}
+                    <div className="p-8">
                     <div className="flex items-center gap-3 mb-5">
                       <span className="text-[10px] font-bold uppercase tracking-widest text-[#D4A855] bg-[#D4A855]/10 px-3 py-1 rounded-full">
                         {post.tag}
@@ -93,6 +105,7 @@ export default function Blogs() {
                       <span className="inline-flex items-center gap-1 text-xs font-bold uppercase tracking-widest text-gray-300 group-hover:text-[#D4A855] transition-colors">
                         Read <ArrowRight size={11} />
                       </span>
+                    </div>
                     </div>
                   </Link>
                 </Reveal>

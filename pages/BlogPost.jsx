@@ -76,6 +76,15 @@ export default function BlogPost() {
         <div className="border-t border-white/10" />
       </section>
 
+      {/* ── COVER IMAGE ──────────────────────────────── */}
+      {post.coverImage && (
+        <div className="bg-white">
+          <div className="max-w-4xl mx-auto">
+            <img src={post.coverImage} alt={post.title} className="w-full aspect-[21/9] object-cover" />
+          </div>
+        </div>
+      )}
+
       {/* ── ARTICLE BODY ─────────────────────────────── */}
       <article className="py-20 md:py-28 bg-white">
         <div className="max-w-3xl mx-auto px-5">
