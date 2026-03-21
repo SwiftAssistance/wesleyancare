@@ -36,7 +36,7 @@ const SERVICES = [
   {
     icon: Activity,
     title: 'Cardiac Care',
-    intro: 'Managing a heart condition at home takes careful attention to medication, routine, and physical limits. Our carers are trained to support safely and to keep families and healthcare providers informed.',
+    intro: 'Managing a heart condition at home takes careful attention to medication, routine, and physical limits. My carers are trained to support safely and to keep families and healthcare providers informed.',
     includes: [
       'Medication management and reminders',
       'Symptom monitoring and reporting',
@@ -49,7 +49,7 @@ const SERVICES = [
   {
     icon: Stethoscope,
     title: 'Spinal Injury Support',
-    intro: 'Skilled, attentive support for individuals living with spinal cord injuries. Our trained workers help clients maintain as much independence as possible, with care adapted as needs change over time.',
+    intro: 'Skilled, attentive support for individuals living with spinal cord injuries. My trained support workers help clients maintain as much independence as possible, with care adapted as needs change over time.',
     includes: [
       'Personal care and hygiene support',
       'Positioning and pressure care',
@@ -91,7 +91,7 @@ const FAQS = [
   { q: 'How quickly can care start?',                          a: 'In most cases, I can begin care within 48–72 hours of an initial assessment. For urgent situations — such as hospital discharges — I can often arrange same-day or next-day start. Call me and I\'ll tell you what\'s realistic for your situation.' },
   { q: 'Can I choose the times and days of visits?',           a: 'Yes. Care schedules are built around your routine, not mine. Whether you need early morning support, evening visits, or weekend care, I\'ll work with you to find a pattern that fits.' },
   { q: 'Will I have the same carer each time?',                a: 'Consistency is a core part of how I work. I assign a small, regular team to every client. You\'ll know who is coming and when. If a carer is unavailable, I\'ll let you know in advance and send someone your team already knows.' },
-  { q: 'Do you accept Direct Payments?',                       a: 'Yes. If your local council has approved you for Direct Payments, you can use them to pay for Wesleyan Care. We work with Direct Payments clients regularly and can help you understand how to allocate your budget.' },
+  { q: 'Do you accept Direct Payments?',                       a: 'Yes. If your local council has approved you for Direct Payments, you can use them to pay for Wesleyan Care. I work with Direct Payments clients regularly and can help you understand how to allocate your budget.' },
   { q: 'What if my needs change?',                             a: 'Care plans are reviewed regularly and adjusted without bureaucracy. If your condition changes, your hours need increasing, or something isn\'t working — I respond quickly. You don\'t need to go through a formal process to make a change.' },
   { q: 'Are your carers trained for specialist conditions?',    a: 'Yes. All carers receive mandatory training, and those working with clients who have dementia, mental health conditions, cardiac needs, or spinal injuries receive additional specialist modules. Training is ongoing, not a one-off.' },
 ];

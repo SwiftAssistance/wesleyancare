@@ -84,7 +84,7 @@ export default function Contact() {
                   When you get in touch, you'll speak with me directly. I take the time to listen before I make any suggestions — because until I understand your situation, I can't tell you what's right for you.
                 </p>
                 <p>
-                  If you're just at the information-gathering stage, that's completely fine. We'd rather answer your questions honestly now than rush you into anything.
+                  If you're just at the information-gathering stage, that's completely fine. I'd rather answer your questions honestly now than rush you into anything.
                 </p>
               </div>
             </Reveal>

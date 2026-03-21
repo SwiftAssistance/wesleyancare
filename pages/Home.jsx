@@ -58,7 +58,7 @@ export default function Home() {
                 Get in touch <ArrowRight size={15} />
               </Link>
               <Link to="/services" className="inline-flex items-center gap-2 border border-[#1B2A4A]/25 text-[#1B2A4A] hover:border-[#1B2A4A] px-8 py-4 rounded-full font-semibold transition-colors">
-                Our services
+                My services
               </Link>
             </div>
           </div>
