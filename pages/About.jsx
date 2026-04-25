@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight, Phone, MapPin, Shield, Award, Users, CheckCircle2 } from 'lucide-react';
 import Reveal from '../components/Reveal.jsx';
+import SEO, { buildBreadcrumbLD } from '../components/SEO.jsx';
 
 const VALUES = [
   { title: 'Person-centred',  desc: 'Every care plan is built around the individual — their preferences, their existing routine, and what actually makes their day better. Not a package pulled off a shelf.' },
@@ -24,6 +25,13 @@ const AREAS = [
 export default function About() {
   return (
     <>
+      <SEO
+        title="About – Independent Private Care Provider, Slough"
+        description="Wesleyan Care is a privately run home care provider based in Slough, Berkshire. Over a decade of specialist support for adults with dementia, mental health needs, cardiac conditions, and more. CQC registered, locally run."
+        canonical="/about"
+        extraSchema={[buildBreadcrumbLD([{ name: 'Home', path: '/' }, { name: 'About' }])]}
+      />
+
       {/* ── PAGE HERO ─────────────────────────────────── */}
       <section className="pt-36 pb-24 bg-[#1B2A4A]">
         <div className="max-w-6xl mx-auto px-5">
@@ -139,8 +147,10 @@ export default function About() {
               <p className="font-serif text-4xl text-[#1B2A4A] leading-tight mb-8">Over a decade of complex care in Berkshire.</p>
               <img
                 src="https://images.pexels.com/photos/8439648/pexels-photo-8439648.jpeg?auto=compress&cs=tinysrgb&w=900"
-                alt="Carer speaking with elderly clients at home"
+                alt="Carer speaking with elderly clients at home in Berkshire"
                 className="w-full object-cover"
+                loading="lazy"
+                decoding="async"
               />
             </div>
           </Reveal>

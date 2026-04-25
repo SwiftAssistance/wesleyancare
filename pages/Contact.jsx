@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Phone, Mail, MapPin, Clock, ArrowRight, CheckCircle2, Shield } from 'lucide-react';
 import Reveal from '../components/Reveal.jsx';
+import SEO, { buildBreadcrumbLD } from '../components/SEO.jsx';
 
 export default function Contact() {
   const [form, setForm]         = useState({ name: '', phone: '', email: '', service: '', message: '' });
@@ -12,6 +13,13 @@ export default function Contact() {
 
   return (
     <>
+      <SEO
+        title="Contact – Private Home Care Enquiries | Slough &amp; Berkshire"
+        description="Get in touch with Wesleyan Care for private home care in Slough and Berkshire. Call 01753 424 473 or send a message. I respond within one working day. No obligation, no pressure."
+        canonical="/contact"
+        extraSchema={[buildBreadcrumbLD([{ name: 'Home', path: '/' }, { name: 'Contact' }])]}
+      />
+
       {/* ── PAGE HERO ─────────────────────────────────── */}
       <section className="pt-36 pb-24 bg-[#1B2A4A]">
         <div className="max-w-6xl mx-auto px-5">

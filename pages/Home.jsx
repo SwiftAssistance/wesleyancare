@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight, Phone, MapPin, Shield, Users, Clock, HeartHandshake } from 'lucide-react';
 import Reveal from '../components/Reveal.jsx';
+import SEO from '../components/SEO.jsx';
 import POSTS from '../data/posts.js';
 
 const SERVICES_PREVIEW = [
@@ -37,6 +38,12 @@ export default function Home() {
 
   return (
     <>
+      <SEO
+        title="Private Home Care in Slough &amp; Berkshire"
+        description="Private home care in Slough and Berkshire — dementia care, palliative care, cardiac care, mental health support, spinal injury care, and home &amp; personal care. Local, independent, fully vetted. Call 01753 424 473."
+        canonical="/"
+      />
+
       {/* ── HERO ──────────────────────────────────────── */}
       <section className="relative min-h-screen flex items-center pt-20 bg-[#FAF7F2] overflow-hidden">
         <div className="relative max-w-6xl mx-auto px-5 py-24 md:py-32 grid md:grid-cols-[3fr_2fr] gap-16 items-center w-full">
@@ -111,8 +118,10 @@ export default function Home() {
             <div className="relative overflow-hidden">
               <img
                 src="https://images.pexels.com/photos/8088906/pexels-photo-8088906.jpeg?auto=compress&cs=tinysrgb&w=900"
-                alt="Elderly couple at home"
+                alt="Elderly couple at home receiving private care in Slough"
                 className="w-full aspect-[4/5] object-cover"
+                loading="lazy"
+                decoding="async"
               />
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-[#1B2A4A]/90 via-[#1B2A4A]/50 to-transparent p-8 pt-20">
                 <p className="font-serif text-xl md:text-2xl text-white leading-snug">
