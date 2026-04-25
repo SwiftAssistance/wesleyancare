@@ -51,12 +51,12 @@ export default function Contact() {
                 <p className="text-[11px] text-white/35 mt-0.5">Reply within 1 working day</p>
               </div>
             </a>
-            <a href="https://maps.google.com/?q=89+Whitby+Road+Slough+SL1+3DR" target="_blank" rel="noopener noreferrer" className="flex items-center gap-5 py-8 px-6 group hover:bg-white/5 transition-colors">
+            <a href="https://maps.google.com/?q=18+Teesdale+Road+Slough+SL2+1UD" target="_blank" rel="noopener noreferrer" className="flex items-center gap-5 py-8 px-6 group hover:bg-white/5 transition-colors">
               <MapPin size={16} className="text-[#D4A855] flex-shrink-0" />
               <div>
                 <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/35 mb-1">Visit me</p>
-                <p className="text-white font-semibold text-sm">89 Whitby Road, Slough</p>
-                <p className="text-[11px] text-white/35 mt-0.5">SL1 3DR, Berkshire</p>
+                <p className="text-white font-semibold text-sm">18 Teesdale Road, Slough</p>
+                <p className="text-[11px] text-white/35 mt-0.5">SL2 1UD, Berkshire</p>
               </div>
             </a>
           </div>
