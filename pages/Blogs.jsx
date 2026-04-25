@@ -41,7 +41,7 @@ export default function Blogs() {
                   ) : (
                     <div className="absolute inset-0 flex items-center justify-center text-center px-10">
                       <div>
-                        <span className="text-[10px] font-bold uppercase tracking-widest text-[#D4A855] bg-[#D4A855]/15 px-3 py-1 rounded-full">
+                        <span className="text-[10px] font-bold uppercase tracking-widest text-[#D4A855] bg-[#D4A855]/15 px-3 py-1">
                           {featured.tag}
                         </span>
                         <p className="font-serif text-3xl text-white leading-snug mt-6">{featured.title}</p>
@@ -87,7 +87,7 @@ export default function Blogs() {
                     )}
                     <div className="p-8">
                     <div className="flex items-center gap-3 mb-5">
-                      <span className="text-[10px] font-bold uppercase tracking-widest text-[#D4A855] bg-[#D4A855]/10 px-3 py-1 rounded-full">
+                      <span className="text-[10px] font-bold uppercase tracking-widest text-[#D4A855] bg-[#D4A855]/10 px-3 py-1">
                         {post.tag}
                       </span>
                       <span className="flex items-center gap-1 text-xs text-gray-400">
@@ -129,10 +129,10 @@ export default function Blogs() {
                 If there's a topic you'd like me to write about, or if you'd like to speak to me directly about any of the subjects covered here, I'm happy to help.
               </p>
               <div className="flex flex-wrap gap-4">
-                <Link to="/contact" className="inline-flex items-center gap-2 bg-[#1B2A4A] hover:bg-[#243860] text-white px-8 py-4 rounded-full font-semibold transition-colors shadow-sm">
-                  Get in touch <ArrowRight size={15} />
+                <Link to="/contact" className="inline-flex items-center gap-2 bg-[#1B2A4A] hover:bg-[#243860] text-white px-7 py-4 font-semibold transition-colors text-sm">
+                  Get in touch <ArrowRight size={14} />
                 </Link>
-                <a href="tel:01753424473" className="inline-flex items-center gap-2 border border-[#1B2A4A]/25 text-[#1B2A4A] hover:border-[#1B2A4A] px-8 py-4 rounded-full font-semibold transition-colors">
+                <a href="tel:01753424473" className="inline-flex items-center gap-2 border border-[#1B2A4A]/20 text-[#1B2A4A] hover:border-[#1B2A4A] px-7 py-4 font-semibold transition-colors text-sm">
                   Call 01753 424 473
                 </a>
               </div>

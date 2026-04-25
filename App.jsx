@@ -15,9 +15,11 @@ export default function App() {
         <style>{`
           @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap');
           * { font-family: 'DM Sans', sans-serif; }
-          .font-serif { font-family: 'Libre Baskerville', Georgia, serif !important; }
-          html { scroll-behavior: smooth; }
-          ::selection { background: #D4A855; color: white; }
+          .font-serif { font-family: 'Libre Baskerville', Georgia, serif !important; font-feature-settings: 'liga' 1, 'kern' 1; }
+          html { scroll-behavior: smooth; scrollbar-gutter: stable; }
+          ::selection { background: #D4A855; color: #fff; }
+          :focus-visible { outline: 2px solid #D4A855; outline-offset: 2px; }
+          button, a { -webkit-tap-highlight-color: transparent; }
         `}</style>
 
         <Navbar />
