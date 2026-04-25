@@ -5,6 +5,7 @@ import {
 } from 'lucide-react';
 import Reveal from '../components/Reveal.jsx';
 import Accordion from '../components/Accordion.jsx';
+import SEO, { buildBreadcrumbLD, SITE_URL } from '../components/SEO.jsx';
 
 const SERVICES = [
   {
@@ -102,9 +103,35 @@ const FAQS = [
   { q: 'Are your carers trained for specialist conditions?',    a: 'Yes. All carers receive mandatory training, and those working with clients who have dementia, mental health conditions, cardiac needs, or spinal injuries receive additional specialist modules. Training is ongoing, not a one-off.' },
 ];
 
+/* Schema for each specialist service offered */
+const SERVICE_LD = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: 'Wesleyan Care Services',
+  url: `${SITE_URL}/services`,
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Dementia Care',          url: `${SITE_URL}/services` },
+    { '@type': 'ListItem', position: 2, name: 'Palliative Care',        url: `${SITE_URL}/services` },
+    { '@type': 'ListItem', position: 3, name: 'Cardiac Care',           url: `${SITE_URL}/services` },
+    { '@type': 'ListItem', position: 4, name: 'Spinal Injury Support',  url: `${SITE_URL}/services` },
+    { '@type': 'ListItem', position: 5, name: 'Mental Health Support',  url: `${SITE_URL}/services` },
+    { '@type': 'ListItem', position: 6, name: 'Home & Personal Care',   url: `${SITE_URL}/services` },
+  ],
+};
+
 export default function Services() {
   return (
     <>
+      <SEO
+        title="Services – Dementia, Palliative, Cardiac &amp; Home Care | Slough"
+        description="Specialist private home care in Slough and Berkshire: dementia care, palliative care, cardiac care, spinal injury support, mental health support, and home &amp; personal care. Direct Payments accepted."
+        canonical="/services"
+        extraSchema={[
+          SERVICE_LD,
+          buildBreadcrumbLD([{ name: 'Home', path: '/' }, { name: 'Services' }]),
+        ]}
+      />
+
       {/* ── PAGE HERO ─────────────────────────────────── */}
       <section className="pt-36 pb-24 bg-[#1B2A4A]">
         <div className="max-w-6xl mx-auto px-5">
@@ -139,7 +166,7 @@ export default function Services() {
               <div className="bg-white border border-gray-100 hover:border-[#D4A855]/30 hover:shadow-md transition-all overflow-hidden">
                 {s.img && (
                   <div className="aspect-[21/9] overflow-hidden">
-                    <img src={s.img} alt={s.title} className="w-full h-full object-cover" />
+                    <img src={s.img} alt={`${s.title} – Wesleyan Care Slough`} className="w-full h-full object-cover" loading="lazy" decoding="async" />
                   </div>
                 )}
                 <div className="grid md:grid-cols-5">

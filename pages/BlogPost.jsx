@@ -1,6 +1,7 @@
 import { useParams, Link, Navigate } from 'react-router-dom';
 import { ArrowLeft, ArrowRight, Clock, User } from 'lucide-react';
 import Reveal from '../components/Reveal.jsx';
+import SEO, { buildArticleLD, buildBreadcrumbLD } from '../components/SEO.jsx';
 import POSTS from '../data/posts.js';
 
 function BodyBlock({ block }) {
@@ -47,6 +48,22 @@ export default function BlogPost() {
 
   return (
     <>
+      <SEO
+        title={post.title}
+        description={post.summary}
+        canonical={`/blogs/${post.slug}`}
+        image={post.coverImage}
+        type="article"
+        extraSchema={[
+          buildArticleLD(post),
+          buildBreadcrumbLD([
+            { name: 'Home', path: '/' },
+            { name: 'Blog', path: '/blogs' },
+            { name: post.title },
+          ]),
+        ]}
+      />
+
       {/* ── HERO ──────────────────────────────────────── */}
       <section className="pt-36 pb-0 bg-[#1B2A4A]">
         <div className="max-w-4xl mx-auto px-5 pb-24">
@@ -80,7 +97,7 @@ export default function BlogPost() {
       {post.coverImage && (
         <div className="bg-white">
           <div className="max-w-4xl mx-auto">
-            <img src={post.coverImage} alt={post.title} className="w-full aspect-[21/9] object-cover" />
+            <img src={post.coverImage} alt={post.title} className="w-full aspect-[21/9] object-cover" loading="lazy" decoding="async" />
           </div>
         </div>
       )}

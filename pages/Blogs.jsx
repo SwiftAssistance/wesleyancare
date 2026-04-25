@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight, Clock } from 'lucide-react';
 import Reveal from '../components/Reveal.jsx';
+import SEO, { buildBreadcrumbLD } from '../components/SEO.jsx';
 import POSTS from '../data/posts.js';
 
 export default function Blogs() {
@@ -9,6 +10,13 @@ export default function Blogs() {
 
   return (
     <>
+      <SEO
+        title="Blog – Care Advice &amp; Guides for Families in Slough"
+        description="Practical advice for families navigating home care in Slough and Berkshire. Articles on dementia care, mental health support, cardiac recovery, carer wellbeing, and council funding guidance."
+        canonical="/blogs"
+        extraSchema={[buildBreadcrumbLD([{ name: 'Home', path: '/' }, { name: 'Blog' }])]}
+      />
+
       {/* ── PAGE HERO ─────────────────────────────────── */}
       <section className="pt-36 pb-0 bg-[#1B2A4A]">
         <div className="max-w-6xl mx-auto px-5 pb-24">
@@ -37,7 +45,7 @@ export default function Blogs() {
               <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
                 <div className="aspect-[4/3] md:aspect-auto md:h-full rounded-sm overflow-hidden bg-[#1B2A4A] relative">
                   {featured.coverImage ? (
-                    <img src={featured.coverImage} alt={featured.title} className="w-full h-full object-cover" />
+                    <img src={featured.coverImage} alt={featured.title} className="w-full h-full object-cover" loading="lazy" decoding="async" />
                   ) : (
                     <div className="absolute inset-0 flex items-center justify-center text-center px-10">
                       <div>
@@ -82,7 +90,7 @@ export default function Blogs() {
                   <Link to={`/blogs/${post.slug}`} className="group block bg-white h-full">
                     {post.coverImage && (
                       <div className="aspect-[16/9] overflow-hidden">
-                        <img src={post.coverImage} alt={post.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                        <img src={post.coverImage} alt={post.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async" />
                       </div>
                     )}
                     <div className="p-8">
