@@ -78,7 +78,7 @@ export default function Home() {
               </div>
               <div className="p-7 bg-[#FAF7F2]">
                 <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-gray-400 mb-3">Find me</p>
-                <p className="text-xs text-gray-600 leading-relaxed">89 Whitby Road<br />Slough, SL1 3DR</p>
+                <p className="text-xs text-gray-600 leading-relaxed">18 Teesdale Road<br />Slough, SL2 1UD</p>
                 <Link to="/contact" className="inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-[0.15em] text-[#D4A855] hover:text-[#c09040] transition-colors mt-4">
                   Send a message <ArrowRight size={11} />
                 </Link>

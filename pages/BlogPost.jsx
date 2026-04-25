@@ -59,7 +59,7 @@ export default function BlogPost() {
               <span className="text-white/60 truncate max-w-[180px]">{post.title}</span>
             </div>
             <div className="flex items-center gap-3 mb-6">
-              <span className="text-[10px] font-bold uppercase tracking-widest text-[#D4A855] bg-[#D4A855]/15 px-3 py-1 rounded-full">
+              <span className="text-[10px] font-bold uppercase tracking-widest text-[#D4A855] bg-[#D4A855]/15 px-3 py-1">
                 {post.tag}
               </span>
             </div>
@@ -105,10 +105,10 @@ export default function BlogPost() {
                   If anything in this article raised questions about your own situation, I'm happy to have an honest conversation — no obligation.
                 </p>
                 <div className="flex flex-wrap gap-4">
-                  <a href="tel:01753424473" className="inline-flex items-center gap-2 bg-[#D4A855] hover:bg-[#c09040] text-white px-6 py-3 rounded-full font-semibold transition-colors text-sm">
+                  <a href="tel:01753424473" className="inline-flex items-center gap-2 bg-[#D4A855] hover:bg-[#c09040] text-white px-6 py-3 font-semibold transition-colors text-sm">
                     Call 01753 424 473
                   </a>
-                  <Link to="/contact" className="inline-flex items-center gap-2 border border-[#1B2A4A]/20 text-[#1B2A4A] hover:border-[#1B2A4A] px-6 py-3 rounded-full font-semibold transition-colors text-sm">
+                  <Link to="/contact" className="inline-flex items-center gap-2 border border-[#1B2A4A]/20 text-[#1B2A4A] hover:border-[#1B2A4A] px-6 py-3 font-semibold transition-colors text-sm">
                     Send a message <ArrowRight size={14} />
                   </Link>
                 </div>
