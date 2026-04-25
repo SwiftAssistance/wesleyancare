@@ -28,16 +28,16 @@ export default function About() {
       <section className="pt-36 pb-24 bg-[#1B2A4A]">
         <div className="max-w-6xl mx-auto px-5">
           <Reveal>
-            <div className="flex items-center gap-2 text-[#D4A855] text-xs font-bold uppercase tracking-widest mb-6">
+            <div className="flex items-center gap-2 text-[#D4A855] text-[10px] font-bold uppercase tracking-[0.2em] mb-8">
               <Link to="/" className="hover:text-white transition-colors">Home</Link>
-              <span className="text-white/30">/</span>
+              <span className="text-white/25">/</span>
               <span>About</span>
             </div>
-            <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl text-white leading-[1.05] mb-8 max-w-3xl">
+            <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl text-white leading-[1.04] mb-8 max-w-3xl">
               I am a care provider.<br />
               <em className="text-[#D4A855] not-italic">Not a care factory.</em>
             </h1>
-            <p className="text-white/60 text-xl leading-relaxed max-w-2xl mb-8">
+            <p className="text-white/55 text-xl leading-relaxed max-w-2xl mb-10">
               Wesleyan Care is a privately run provider based in Slough. I specialise in supporting adults with complex needs — and I've been doing it for over a decade.
             </p>
             <hr className="border-white/10" />
@@ -50,12 +50,12 @@ export default function About() {
         <div className="max-w-6xl mx-auto px-5 grid md:grid-cols-2 gap-16 items-start">
           <Reveal>
             <div>
-              <blockquote className="border-l-4 border-[#D4A855] pl-8 mb-10">
+              <blockquote className="border-l-2 border-[#D4A855] pl-7 mb-8">
                 <p className="font-serif text-2xl md:text-3xl text-[#1B2A4A] leading-snug">
                   "Inviting someone into your home is one of the most significant decisions a family can make. I don't take that lightly."
                 </p>
               </blockquote>
-              <p className="text-sm text-gray-400 pl-8">Wesleyan Care, founded in Slough</p>
+              <p className="text-xs text-gray-400 pl-7">Wesleyan Care, founded in Slough</p>
             </div>
           </Reveal>
 
@@ -71,8 +71,8 @@ export default function About() {
                 Every carer I place is supervised, trained, and supported. When things change — and they do — I respond quickly and without fuss. That's what being a local, independent provider actually means.
               </p>
               <div className="pt-4">
-                <Link to="/contact" className="inline-flex items-center gap-2 font-semibold text-[#1B2A4A] border-b-2 border-[#D4A855] pb-0.5 hover:text-[#D4A855] transition-colors text-sm">
-                  Talk to me <ArrowRight size={14} />
+                <Link to="/contact" className="inline-flex items-center gap-2 text-sm font-semibold text-[#1B2A4A] border-b border-[#D4A855] pb-0.5 hover:text-[#D4A855] transition-colors">
+                  Talk to me <ArrowRight size={13} />
                 </Link>
               </div>
             </div>
@@ -88,15 +88,17 @@ export default function About() {
               What I actually stand for.
             </h2>
           </Reveal>
-          <div className="grid md:grid-cols-2 gap-x-16 gap-y-10">
+          <div className="grid md:grid-cols-2 gap-0">
             {VALUES.map((v, i) => (
               <Reveal key={i} delay={i * 80}>
-                <div className="border-l-2 border-[#D4A855]/30 pl-6">
-                  <p className="font-bold text-[#1B2A4A] text-lg mb-2">{v.title}</p>
-                  <p className="text-gray-500 leading-relaxed">{v.desc}</p>
+                <div className="border-t border-gray-200 py-8 md:px-8 first:border-t md:even:border-l md:even:border-gray-200">
+                  <p className="font-semibold text-[#1B2A4A] text-base mb-3">{v.title}</p>
+                  <p className="text-gray-500 leading-relaxed text-sm">{v.desc}</p>
                 </div>
               </Reveal>
             ))}
+            {/* Close the last border */}
+            <div className="border-t border-gray-200 md:col-span-2" />
           </div>
         </div>
       </section>
@@ -105,22 +107,22 @@ export default function About() {
       <section className="py-24 md:py-32 bg-white">
         <div className="max-w-6xl mx-auto px-5">
           <Reveal>
-            <div className="text-center mb-16">
-              <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#D4A855] mb-4">Standards & Compliance</p>
-              <h2 className="font-serif text-4xl md:text-5xl text-[#1B2A4A] leading-tight max-w-2xl mx-auto">
+            <div className="mb-14">
+              <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#D4A855] mb-4">Standards & Compliance</p>
+              <h2 className="font-serif text-4xl md:text-5xl text-[#1B2A4A] leading-tight max-w-xl">
                 The standards I hold myself to.
               </h2>
             </div>
           </Reveal>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-gray-100">
             {CREDENTIALS.map((c, i) => (
               <Reveal key={i} delay={i * 80}>
-                <div className="border border-gray-100 bg-[#FAF7F2] p-7 h-full">
-                  <div className="w-11 h-11 rounded-lg bg-[#1B2A4A]/5 text-[#D4A855] flex items-center justify-center mb-5">
-                    <c.icon size={22} />
+                <div className="bg-white p-8">
+                  <div className="text-[#D4A855] mb-5">
+                    <c.icon size={20} />
                   </div>
-                  <h3 className="font-bold text-[#1B2A4A] mb-2">{c.title}</h3>
-                  <p className="text-sm text-gray-500 leading-relaxed">{c.desc}</p>
+                  <h3 className="font-semibold text-[#1B2A4A] text-sm mb-3">{c.title}</h3>
+                  <p className="text-xs text-gray-500 leading-relaxed">{c.desc}</p>
                 </div>
               </Reveal>
             ))}
@@ -133,12 +135,12 @@ export default function About() {
         <div className="max-w-6xl mx-auto px-5 grid md:grid-cols-2 gap-16 items-start">
           <Reveal>
             <div>
-              <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#D4A855] mb-6">My Background</p>
+              <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#D4A855] mb-6">My Background</p>
               <p className="font-serif text-4xl text-[#1B2A4A] leading-tight mb-8">Over a decade of complex care in Berkshire.</p>
               <img
                 src="https://images.pexels.com/photos/8439648/pexels-photo-8439648.jpeg?auto=compress&cs=tinysrgb&w=900"
                 alt="Carer speaking with elderly clients at home"
-                className="w-full object-cover rounded-sm"
+                className="w-full object-cover"
               />
             </div>
           </Reveal>
@@ -163,23 +165,19 @@ export default function About() {
         <div className="max-w-6xl mx-auto px-5 grid md:grid-cols-2 gap-16 items-start">
           <Reveal>
             <div>
-              <div className="w-12 h-12 rounded-lg bg-[#1B2A4A]/5 text-[#D4A855] flex items-center justify-center mb-6">
-                <MapPin size={24} />
-              </div>
-              <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#D4A855] mb-4">Where I Work</p>
+              <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#D4A855] mb-5">Where I Work</p>
               <h2 className="font-serif text-4xl text-[#1B2A4A] leading-tight mb-6">
-                Based in Slough. Covering Berkshire and beyond.
+                Based in Slough.<br />Covering Berkshire and beyond.
               </h2>
-              <p className="text-gray-500 leading-relaxed">
+              <p className="text-gray-500 leading-relaxed text-sm max-w-sm">
                 I am based in Slough and provide care across Berkshire and surrounding areas. If you're unsure whether I cover your area, call me — I'll tell you honestly.
               </p>
             </div>
           </Reveal>
           <Reveal delay={100}>
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-0 border-t border-l border-gray-100">
               {AREAS.map((area, i) => (
-                <div key={i} className="flex items-center gap-2 bg-[#FAF7F2] border border-gray-100 px-4 py-3 text-sm text-[#1B2A4A] font-medium">
-                  <MapPin size={12} className="text-[#D4A855] flex-shrink-0" />
+                <div key={i} className="border-b border-r border-gray-100 px-4 py-3 text-sm text-[#1B2A4A]">
                   {area}
                 </div>
               ))}
@@ -192,25 +190,31 @@ export default function About() {
       <section className="py-24 bg-[#FAF7F2] border-y border-gray-200">
         <div className="max-w-6xl mx-auto px-5">
           <Reveal>
-            <h2 className="font-serif text-4xl md:text-5xl text-[#1B2A4A] leading-tight mb-16 max-w-xl">
-              What happens when you contact me.
-            </h2>
+            <div className="grid md:grid-cols-[1fr_2fr] gap-16 items-start">
+              <div>
+                <h2 className="font-serif text-4xl text-[#1B2A4A] leading-tight">
+                  What happens when you contact me.
+                </h2>
+              </div>
+              <div className="space-y-10">
+                {[
+                  { n: '01', title: 'A real conversation', desc: 'You speak to me directly — not a form or a chatbot. I listen to your situation and answer questions honestly. No sales pitch.' },
+                  { n: '02', title: 'A home assessment',   desc: 'I visit you at home to understand your needs properly: your routine, your preferences, the things that matter most to you day to day.' },
+                  { n: '03', title: 'Care that fits',      desc: 'I match you with the right carer, introduce them before care starts, and check in regularly. If anything needs adjusting, I adjust it.' },
+                ].map((step, i) => (
+                  <Reveal key={i} delay={i * 100}>
+                    <div className="flex gap-8 items-start">
+                      <p className="font-serif text-2xl text-[#D4A855]/25 font-bold leading-none flex-shrink-0 w-8 pt-1 select-none">{step.n}</p>
+                      <div>
+                        <h3 className="font-semibold text-base text-[#1B2A4A] mb-2">{step.title}</h3>
+                        <p className="text-gray-500 leading-relaxed text-sm">{step.desc}</p>
+                      </div>
+                    </div>
+                  </Reveal>
+                ))}
+              </div>
+            </div>
           </Reveal>
-          <div className="grid md:grid-cols-3 gap-12">
-            {[
-              { n: '01', title: 'A real conversation', desc: 'You speak to me directly — not a form or a chatbot. I listen to your situation and answer questions honestly. No sales pitch.' },
-              { n: '02', title: 'A home assessment',   desc: 'I visit you at home to understand your needs properly: your routine, your preferences, the things that matter most to you day to day.' },
-              { n: '03', title: 'Care that fits',      desc: 'I match you with the right carer, introduce them before care starts, and check in regularly. If anything needs adjusting, I adjust it.' },
-            ].map((step, i) => (
-              <Reveal key={i} delay={i * 100}>
-                <div>
-                  <p className="font-serif text-6xl text-[#D4A855]/20 font-bold leading-none mb-5 select-none">{step.n}</p>
-                  <h3 className="font-bold text-xl text-[#1B2A4A] mb-3">{step.title}</h3>
-                  <p className="text-gray-500 leading-relaxed">{step.desc}</p>
-                </div>
-              </Reveal>
-            ))}
-          </div>
         </div>
       </section>
 
@@ -224,11 +228,11 @@ export default function About() {
           </Reveal>
           <Reveal delay={100}>
             <div className="flex flex-wrap gap-4">
-              <a href="tel:01753424473" className="inline-flex items-center gap-2 bg-[#D4A855] hover:bg-[#c09040] text-white px-8 py-4 rounded-full font-semibold transition-colors">
-                <Phone size={16} /> 01753 424 473
+              <a href="tel:01753424473" className="inline-flex items-center gap-2 bg-[#D4A855] hover:bg-[#c09040] text-white px-7 py-4 font-semibold transition-colors text-sm">
+                <Phone size={14} /> 01753 424 473
               </a>
-              <Link to="/services" className="inline-flex items-center gap-2 border border-white/30 hover:border-white text-white px-8 py-4 rounded-full font-semibold transition-colors">
-                View my services <ArrowRight size={15} />
+              <Link to="/services" className="inline-flex items-center gap-2 border border-white/25 hover:border-white text-white px-7 py-4 font-semibold transition-colors text-sm">
+                View my services <ArrowRight size={14} />
               </Link>
             </div>
           </Reveal>

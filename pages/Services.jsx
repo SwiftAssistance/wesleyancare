@@ -144,7 +144,7 @@ export default function Services() {
                 )}
                 <div className="grid md:grid-cols-5">
                   <div className="md:col-span-2 p-8 md:p-10 border-b md:border-b-0 md:border-r border-gray-100">
-                    <div className="w-10 h-10 rounded-lg bg-[#1B2A4A]/5 text-[#1B2A4A] flex items-center justify-center mb-6">
+                    <div className="text-[#D4A855] mb-6">
                       <s.icon size={20} />
                     </div>
                     <h2 className="font-serif text-2xl text-[#1B2A4A] mb-4">{s.title}</h2>
@@ -175,8 +175,8 @@ export default function Services() {
       <section className="py-24 md:py-32 bg-white border-t border-gray-200">
         <div className="max-w-4xl mx-auto px-5">
           <Reveal>
-            <div className="text-center mb-14">
-              <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#D4A855] mb-4">Common Questions</p>
+            <div className="mb-14">
+              <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#D4A855] mb-4">Common Questions</p>
               <h2 className="font-serif text-4xl md:text-5xl text-[#1B2A4A] leading-tight">
                 Questions families ask me.
               </h2>
@@ -201,11 +201,11 @@ export default function Services() {
           </Reveal>
           <Reveal delay={100}>
             <div className="flex flex-wrap gap-4">
-              <a href="tel:01753424473" className="inline-flex items-center gap-2 bg-[#D4A855] hover:bg-[#c09040] text-white px-8 py-4 rounded-full font-semibold transition-colors">
-                <Phone size={16} /> Call 01753 424 473
+              <a href="tel:01753424473" className="inline-flex items-center gap-2 bg-[#D4A855] hover:bg-[#c09040] text-white px-7 py-4 font-semibold transition-colors text-sm">
+                <Phone size={14} /> Call 01753 424 473
               </a>
-              <Link to="/contact" className="inline-flex items-center gap-2 border border-white/30 hover:border-white text-white px-8 py-4 rounded-full font-semibold transition-colors">
-                Send a message <ArrowRight size={15} />
+              <Link to="/contact" className="inline-flex items-center gap-2 border border-white/25 hover:border-white text-white px-7 py-4 font-semibold transition-colors text-sm">
+                Send a message <ArrowRight size={14} />
               </Link>
             </div>
           </Reveal>
