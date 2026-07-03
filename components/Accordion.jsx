@@ -4,37 +4,28 @@ import { Plus } from 'lucide-react';
 export default function Accordion({ items }) {
   const [open, setOpen] = useState(null);
   return (
-    <div className="space-y-3">
+    <div className="border-b border-evergreen/20">
       {items.map((item, i) => {
         const isOpen = open === i;
         return (
-          <div
-            key={i}
-            className={`rounded-3xl border transition-colors ${
-              isOpen ? 'bg-parchment border-terracotta/30 shadow-card' : 'bg-parchment/60 border-evergreen/10 hover:border-evergreen/25'
-            }`}
-          >
+          <div key={i} className="border-t border-evergreen/20">
             <button
               onClick={() => setOpen(isOpen ? null : i)}
-              className="w-full flex items-center justify-between gap-6 px-6 sm:px-8 py-5 sm:py-6 text-left group"
+              className="w-full grid grid-cols-[3rem_1fr_auto] items-baseline gap-4 py-6 text-left group"
               aria-expanded={isOpen}
             >
-              <span className="font-semibold text-evergreen text-base leading-snug">
+              <span className="label-mono text-terracotta">0{i + 1}</span>
+              <span className={`font-display text-xl sm:text-2xl leading-snug transition-colors ${isOpen ? 'text-terracotta' : 'text-evergreen group-hover:text-terracotta'}`}>
                 {item.q}
               </span>
-              <span
-                className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 transition-all duration-300 ${
-                  isOpen ? 'bg-terracotta text-white rotate-45' : 'bg-evergreen/[0.06] text-evergreen group-hover:bg-terracotta/15 group-hover:text-terracotta'
-                }`}
-              >
-                <Plus size={16} />
-              </span>
+              <Plus
+                size={18}
+                className={`self-center text-evergreen/40 transition-transform duration-300 ${isOpen ? 'rotate-45 text-terracotta' : ''}`}
+              />
             </button>
-            <div
-              className={`grid transition-[grid-template-rows] duration-300 ease-in-out ${isOpen ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'}`}
-            >
+            <div className={`grid transition-[grid-template-rows] duration-300 ease-in-out ${isOpen ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'}`}>
               <div className="overflow-hidden">
-                <p className="text-evergreen/60 leading-relaxed px-6 sm:px-8 pb-6 pr-16">{item.a}</p>
+                <p className="text-evergreen/60 leading-relaxed pb-7 pl-[4rem] pr-10 max-w-2xl">{item.a}</p>
               </div>
             </div>
           </div>
