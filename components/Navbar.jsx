@@ -25,7 +25,7 @@ export default function Navbar() {
         <div className="h-16 sm:h-[4.5rem] flex items-center justify-between gap-6">
           <Link to="/" className="flex items-baseline gap-3 group" aria-label="Wesleyan Care — home">
             <span className="font-display text-xl sm:text-[1.35rem] text-evergreen tracking-tight group-hover:text-terracotta transition-colors">
-              Wesleyan&nbsp;Care
+              Wesleyan&nbsp;Care<span className="text-terracotta">.</span>
             </span>
             <span className="hidden sm:inline label-mono text-evergreen/50">Slough, Berks.</span>
           </Link>
@@ -35,6 +35,7 @@ export default function Navbar() {
               <Link
                 key={l.name}
                 to={l.to}
+                aria-current={isActive(l.to) ? 'page' : undefined}
                 className={`label-mono py-2 border-b transition-colors ${
                   isActive(l.to)
                     ? 'text-terracotta border-terracotta'
@@ -69,6 +70,7 @@ export default function Navbar() {
             <Link
               key={l.name}
               to={l.to}
+              aria-current={isActive(l.to) ? 'page' : undefined}
               className={`flex items-baseline justify-between px-5 py-4 border-b border-evergreen/10 ${
                 isActive(l.to) ? 'text-terracotta' : 'text-evergreen/70'
               }`}

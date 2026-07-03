@@ -47,7 +47,7 @@ export default function Footer() {
       {/* Columns */}
       <div className="max-w-7xl mx-auto px-5 sm:px-8 py-14 grid gap-12 sm:grid-cols-2 lg:grid-cols-[2fr_1fr_1.3fr_1.5fr]">
         <div>
-          <p className="font-display text-2xl tracking-tight mb-1.5">Wesleyan Care</p>
+          <p className="font-display text-2xl tracking-tight mb-1.5">Wesleyan Care<span className="text-terracotta-light">.</span></p>
           <p className="label-mono text-terracotta-light mb-7">Slough · Berkshire</p>
           <p className="text-sm text-cream/50 leading-relaxed max-w-[28ch]">
             Independent private care for adults with complex needs across Berkshire.

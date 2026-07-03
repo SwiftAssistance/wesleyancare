@@ -4,7 +4,7 @@ import Reveal from '../components/Reveal.jsx';
 import Accordion from '../components/Accordion.jsx';
 import PageHero from '../components/PageHero.jsx';
 import SectionHead from '../components/SectionHead.jsx';
-import SEO, { buildBreadcrumbLD, SITE_URL } from '../components/SEO.jsx';
+import SEO, { buildBreadcrumbLD, buildFAQLD, SITE_URL } from '../components/SEO.jsx';
 
 const SERVICES = [
   {
@@ -118,6 +118,7 @@ export default function Services() {
         canonical="/services"
         extraSchema={[
           SERVICE_LD,
+          buildFAQLD(FAQS),
           buildBreadcrumbLD([{ name: 'Home', path: '/' }, { name: 'Services' }]),
         ]}
       />

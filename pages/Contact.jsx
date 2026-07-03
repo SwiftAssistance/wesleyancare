@@ -39,7 +39,24 @@ export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
 
   const handleChange = e => setForm(f => ({ ...f, [e.target.name]: e.target.value }));
-  const handleSubmit = e => { e.preventDefault(); setSubmitted(true); };
+
+  // No form backend — compose the enquiry in the visitor's own email app
+  // so the message actually reaches the practice.
+  const handleSubmit = e => {
+    e.preventDefault();
+    const subject = `Care enquiry — ${form.name}`;
+    const body = [
+      `Name: ${form.name}`,
+      form.phone && `Phone: ${form.phone}`,
+      `Email: ${form.email}`,
+      form.service && `Service of interest: ${form.service}`,
+      '',
+      form.message,
+    ].filter(Boolean).join('\n');
+    window.location.href =
+      `mailto:support@wesleyancare.onmicrosoft.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    setSubmitted(true);
+  };
 
   return (
     <>
@@ -94,10 +111,15 @@ export default function Contact() {
               <Reveal delay={60}>
                 {submitted ? (
                   <div className="border-t-2 border-evergreen pt-8">
-                    <p className="label-mono text-terracotta mb-6">Message received</p>
-                    <h3 className="font-display text-4xl text-evergreen tracking-tight mb-5">Thank you.</h3>
-                    <p className="text-evergreen/60 text-lg leading-relaxed mb-9 max-w-md">
-                      I'll be back in touch within one working day. If it's urgent, call me on{' '}
+                    <p className="label-mono text-terracotta mb-6">One more step</p>
+                    <h3 className="font-display text-4xl text-evergreen tracking-tight mb-5">Nearly there.</h3>
+                    <p className="text-evergreen/60 text-lg leading-relaxed mb-5 max-w-md">
+                      Your email app should have opened with your message ready — just press send. I reply within one working day.
+                    </p>
+                    <p className="text-evergreen/60 leading-relaxed mb-9 max-w-md">
+                      If it didn't open, email{' '}
+                      <a href="mailto:support@wesleyancare.onmicrosoft.com" className="text-evergreen font-semibold underline underline-offset-4 decoration-terracotta hover:text-terracotta transition-colors break-all">support@wesleyancare.onmicrosoft.com</a>{' '}
+                      or call{' '}
                       <a href="tel:01753424473" className="text-evergreen font-semibold underline underline-offset-4 decoration-terracotta hover:text-terracotta transition-colors">01753 424 473</a>.
                     </p>
                     <Link to="/" className="btn btn-outline">

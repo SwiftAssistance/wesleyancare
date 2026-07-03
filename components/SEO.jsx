@@ -96,6 +96,19 @@ export function buildArticleLD(post) {
   };
 }
 
+/* ── FAQPage JSON-LD builder ─────────────────────────────────────── */
+export function buildFAQLD(faqs) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map(({ q, a }) => ({
+      '@type': 'Question',
+      name: q,
+      acceptedAnswer: { '@type': 'Answer', text: a },
+    })),
+  };
+}
+
 /* ── BreadcrumbList JSON-LD builder ─────────────────────────────── */
 export function buildBreadcrumbLD(crumbs) {
   return {
