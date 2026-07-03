@@ -1,10 +1,11 @@
 import { Link } from 'react-router-dom';
 import {
   Brain, Heart, Activity, Stethoscope, HandHeart,
-  Home as HomeIcon, ArrowRight, Phone, CheckCircle2,
+  Home as HomeIcon, ArrowRight, Phone, Check, BadgeCheck,
 } from 'lucide-react';
 import Reveal from '../components/Reveal.jsx';
 import Accordion from '../components/Accordion.jsx';
+import PageHero from '../components/PageHero.jsx';
 import SEO, { buildBreadcrumbLD, SITE_URL } from '../components/SEO.jsx';
 
 const SERVICES = [
@@ -95,28 +96,25 @@ const SERVICES = [
 ];
 
 const FAQS = [
-  { q: 'How quickly can care start?',                          a: 'In most cases, I can begin care within 48–72 hours of an initial assessment. For urgent situations — such as hospital discharges — I can often arrange same-day or next-day start. Call me and I\'ll tell you what\'s realistic for your situation.' },
-  { q: 'Can I choose the times and days of visits?',           a: 'Yes. Care schedules are built around your routine, not mine. Whether you need early morning support, evening visits, or weekend care, I\'ll work with you to find a pattern that fits.' },
-  { q: 'Will I have the same carer each time?',                a: 'Consistency is a core part of how I work. I assign a small, regular team to every client. You\'ll know who is coming and when. If a carer is unavailable, I\'ll let you know in advance and send someone your team already knows.' },
-  { q: 'Do you accept Direct Payments?',                       a: 'Yes. If your local council has approved you for Direct Payments, you can use them to pay for Wesleyan Care. I work with Direct Payments clients regularly and can help you understand how to allocate your budget.' },
-  { q: 'What if my needs change?',                             a: 'Care plans are reviewed regularly and adjusted without bureaucracy. If your condition changes, your hours need increasing, or something isn\'t working — I respond quickly. You don\'t need to go through a formal process to make a change.' },
-  { q: 'Are your carers trained for specialist conditions?',    a: 'Yes. All carers receive mandatory training, and those working with clients who have dementia, mental health conditions, cardiac needs, or spinal injuries receive additional specialist modules. Training is ongoing, not a one-off.' },
+  { q: 'How quickly can care start?',                       a: 'In most cases, I can begin care within 48–72 hours of an initial assessment. For urgent situations — such as hospital discharges — I can often arrange same-day or next-day start. Call me and I\'ll tell you what\'s realistic for your situation.' },
+  { q: 'Can I choose the times and days of visits?',        a: 'Yes. Care schedules are built around your routine, not mine. Whether you need early morning support, evening visits, or weekend care, I\'ll work with you to find a pattern that fits.' },
+  { q: 'Will I have the same carer each time?',             a: 'Consistency is a core part of how I work. I assign a small, regular team to every client. You\'ll know who is coming and when. If a carer is unavailable, I\'ll let you know in advance and send someone your team already knows.' },
+  { q: 'Do you accept Direct Payments?',                    a: 'Yes. If your local council has approved you for Direct Payments, you can use them to pay for Wesleyan Care. I work with Direct Payments clients regularly and can help you understand how to allocate your budget.' },
+  { q: 'What if my needs change?',                          a: 'Care plans are reviewed regularly and adjusted without bureaucracy. If your condition changes, your hours need increasing, or something isn\'t working — I respond quickly. You don\'t need to go through a formal process to make a change.' },
+  { q: 'Are your carers trained for specialist conditions?', a: 'Yes. All carers receive mandatory training, and those working with clients who have dementia, mental health conditions, cardiac needs, or spinal injuries receive additional specialist modules. Training is ongoing, not a one-off.' },
 ];
 
-/* Schema for each specialist service offered */
 const SERVICE_LD = {
   '@context': 'https://schema.org',
   '@type': 'ItemList',
   name: 'Wesleyan Care Services',
   url: `${SITE_URL}/services`,
-  itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Dementia Care',          url: `${SITE_URL}/services` },
-    { '@type': 'ListItem', position: 2, name: 'Palliative Care',        url: `${SITE_URL}/services` },
-    { '@type': 'ListItem', position: 3, name: 'Cardiac Care',           url: `${SITE_URL}/services` },
-    { '@type': 'ListItem', position: 4, name: 'Spinal Injury Support',  url: `${SITE_URL}/services` },
-    { '@type': 'ListItem', position: 5, name: 'Mental Health Support',  url: `${SITE_URL}/services` },
-    { '@type': 'ListItem', position: 6, name: 'Home & Personal Care',   url: `${SITE_URL}/services` },
-  ],
+  itemListElement: SERVICES.map((s, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    name: s.title,
+    url: `${SITE_URL}/services`,
+  })),
 };
 
 export default function Services() {
@@ -132,79 +130,71 @@ export default function Services() {
         ]}
       />
 
-      {/* ── PAGE HERO ─────────────────────────────────── */}
-      <section className="pt-36 pb-24 bg-[#1B2A4A]">
-        <div className="max-w-6xl mx-auto px-5">
-          <Reveal>
-            <div className="flex items-center gap-2 text-[#D4A855] text-xs font-bold uppercase tracking-widest mb-6">
-              <Link to="/" className="hover:text-white transition-colors">Home</Link>
-              <span className="text-white/30">/</span>
-              <span>Services</span>
-            </div>
-            <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl text-white leading-[1.05] mb-8 max-w-3xl">
-              Specialist care for complex needs.
-            </h1>
-            <p className="text-white/60 text-xl leading-relaxed max-w-2xl mb-6">
-              Private and self-funded care, delivered across Slough and Berkshire. Direct Payments accepted.
-            </p>
-            <div className="flex flex-wrap items-center gap-4 text-sm text-white/40 font-medium">
-              <span className="flex items-center gap-2"><CheckCircle2 size={14} className="text-[#D4A855]" /> Private & self-funded</span>
-              <span className="text-white/20">·</span>
-              <span className="flex items-center gap-2"><CheckCircle2 size={14} className="text-[#D4A855]" /> 1hr visits to live-in</span>
-              <span className="text-white/20">·</span>
-              <span className="flex items-center gap-2"><CheckCircle2 size={14} className="text-[#D4A855]" /> Slough & Berkshire</span>
-            </div>
-          </Reveal>
+      <PageHero
+        crumbs={[{ name: 'Home', path: '/' }, { name: 'Services' }]}
+        title={<>Specialist care for <em className="text-terracotta">complex needs</em>.</>}
+        lead="Private and self-funded care, delivered across Slough and Berkshire. Direct Payments accepted."
+      >
+        <div className="flex flex-wrap gap-2.5 mt-9">
+          {['Private & self-funded', '1-hour visits to live-in', 'Slough & Berkshire'].map(t => (
+            <span key={t} className="inline-flex items-center gap-2 bg-parchment border border-evergreen/10 rounded-full px-4 py-2 text-sm text-evergreen/70 font-medium">
+              <BadgeCheck size={14} className="text-moss" /> {t}
+            </span>
+          ))}
         </div>
-      </section>
+      </PageHero>
 
       {/* ── SERVICE CARDS ─────────────────────────────── */}
-      <section className="py-24">
-        <div className="max-w-6xl mx-auto px-5 space-y-6">
+      <section className="pb-8">
+        <div className="max-w-6xl mx-auto px-5 space-y-8">
           {SERVICES.map((s, i) => (
             <Reveal key={i} delay={50}>
-              <div className="bg-white border border-gray-100 hover:border-[#D4A855]/30 hover:shadow-md transition-all overflow-hidden">
-                {s.img && (
-                  <div className="aspect-[21/9] overflow-hidden">
-                    <img src={s.img} alt={`${s.title} – Wesleyan Care Slough`} className="w-full h-full object-cover" loading="lazy" decoding="async" />
+              <article className="bg-parchment border border-evergreen/5 rounded-[2rem] overflow-hidden hover:shadow-lift transition-shadow duration-300">
+                <div className="grid lg:grid-cols-2">
+                  <div className={`aspect-[16/10] lg:aspect-auto lg:h-full ${i % 2 === 1 ? 'lg:order-2' : ''}`}>
+                    <img
+                      src={s.img}
+                      alt={`${s.title} – Wesleyan Care Slough`}
+                      className="w-full h-full object-cover"
+                      loading="lazy"
+                      decoding="async"
+                    />
                   </div>
-                )}
-                <div className="grid md:grid-cols-5">
-                  <div className="md:col-span-2 p-8 md:p-10 border-b md:border-b-0 md:border-r border-gray-100">
-                    <div className="text-[#D4A855] mb-6">
+                  <div className="p-8 md:p-12">
+                    <span className="w-12 h-12 rounded-2xl bg-sand text-evergreen flex items-center justify-center mb-6">
                       <s.icon size={20} />
-                    </div>
-                    <h2 className="font-serif text-2xl text-[#1B2A4A] mb-4">{s.title}</h2>
-                    <p className="text-gray-500 leading-relaxed text-sm">{s.intro}</p>
-                    <Link to="/contact" className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-widest text-[#1B2A4A] hover:text-[#D4A855] transition-colors mt-6">
-                      Enquire <ArrowRight size={12} />
+                    </span>
+                    <h2 className="font-display text-3xl text-evergreen tracking-tight mb-4">{s.title}</h2>
+                    <p className="text-evergreen/60 leading-relaxed mb-7">{s.intro}</p>
+                    <ul className="grid sm:grid-cols-2 gap-y-2.5 gap-x-6 mb-8">
+                      {s.includes.map((item, j) => (
+                        <li key={j} className="flex items-start gap-2.5 text-sm text-evergreen/70">
+                          <Check size={15} className="text-moss mt-0.5 flex-shrink-0" />
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    <Link
+                      to="/contact"
+                      className="inline-flex items-center gap-2 bg-evergreen hover:bg-evergreen-light text-cream px-6 py-3 rounded-full font-semibold transition-colors text-sm"
+                    >
+                      Enquire about {s.title.toLowerCase()} <ArrowRight size={14} />
                     </Link>
                   </div>
-                  <div className="md:col-span-3 p-8 md:p-10 bg-[#FAF7F2]">
-                    <p className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-6">This service includes</p>
-                    <div className="grid sm:grid-cols-2 gap-y-3 gap-x-8">
-                      {s.includes.map((item, j) => (
-                        <div key={j} className="flex items-start gap-3 text-sm text-gray-600">
-                          <span className="text-[#D4A855] mt-0.5 flex-shrink-0 font-bold">—</span>
-                          <span>{item}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
                 </div>
-              </div>
+              </article>
             </Reveal>
           ))}
         </div>
       </section>
 
       {/* ── FAQ ───────────────────────────────────────── */}
-      <section className="py-24 md:py-32 bg-white border-t border-gray-200">
-        <div className="max-w-4xl mx-auto px-5">
+      <section className="py-16 md:py-24">
+        <div className="max-w-3xl mx-auto px-5">
           <Reveal>
-            <div className="mb-14">
-              <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#D4A855] mb-4">Common Questions</p>
-              <h2 className="font-serif text-4xl md:text-5xl text-[#1B2A4A] leading-tight">
+            <div className="text-center mb-12">
+              <p className="text-[11px] font-bold uppercase tracking-[0.25em] text-terracotta mb-5">Common questions</p>
+              <h2 className="font-display text-4xl md:text-5xl text-evergreen leading-tight tracking-tight">
                 Questions families ask me.
               </h2>
             </div>
@@ -216,26 +206,38 @@ export default function Services() {
       </section>
 
       {/* ── BOTTOM CTA ────────────────────────────────── */}
-      <section className="py-24 bg-[#1B2A4A]">
-        <div className="max-w-6xl mx-auto px-5 grid md:grid-cols-2 gap-16 items-center">
-          <Reveal>
-            <div className="text-white">
-              <h2 className="font-serif text-4xl md:text-5xl leading-tight mb-6">Not sure what you need?</h2>
-              <p className="text-white/60 text-lg leading-relaxed">
-                Many of my clients come to me with needs that don't fit neatly into one category — and that's completely normal. I'm experienced at working through that with families, building care plans that respond to the full picture rather than a single diagnosis. Call me for a free, informal conversation and I'll help you figure out what makes sense.
-              </p>
-            </div>
-          </Reveal>
-          <Reveal delay={100}>
-            <div className="flex flex-wrap gap-4">
-              <a href="tel:01753424473" className="inline-flex items-center gap-2 bg-[#D4A855] hover:bg-[#c09040] text-white px-7 py-4 font-semibold transition-colors text-sm">
-                <Phone size={14} /> Call 01753 424 473
-              </a>
-              <Link to="/contact" className="inline-flex items-center gap-2 border border-white/25 hover:border-white text-white px-7 py-4 font-semibold transition-colors text-sm">
-                Send a message <ArrowRight size={14} />
-              </Link>
-            </div>
-          </Reveal>
+      <section className="px-3 sm:px-5 pb-20">
+        <div className="max-w-7xl mx-auto bg-terracotta rounded-[2rem] sm:rounded-[2.5rem] overflow-hidden relative">
+          <div
+            aria-hidden="true"
+            className="absolute -bottom-24 -left-24 w-96 h-96 rounded-full bg-white/10 blur-3xl pointer-events-none"
+          />
+          <div className="max-w-6xl mx-auto px-6 sm:px-10 py-16 md:py-20 grid md:grid-cols-2 gap-12 items-center relative">
+            <Reveal>
+              <div className="text-white">
+                <h2 className="font-display text-4xl md:text-5xl leading-tight tracking-tight mb-6">Not sure what you need?</h2>
+                <p className="text-white/80 text-lg leading-relaxed">
+                  Many clients come to me with needs that don't fit neatly into one category — that's completely normal. Call me for a free, informal conversation and I'll help you figure out what makes sense.
+                </p>
+              </div>
+            </Reveal>
+            <Reveal delay={100}>
+              <div className="flex flex-wrap gap-4 md:justify-end">
+                <a
+                  href="tel:01753424473"
+                  className="inline-flex items-center gap-2 bg-white text-terracotta-dark hover:bg-cream px-8 py-4 rounded-full font-semibold transition-colors text-sm"
+                >
+                  <Phone size={15} /> Call 01753 424 473
+                </a>
+                <Link
+                  to="/contact"
+                  className="inline-flex items-center gap-2 border border-white/40 hover:border-white text-white px-8 py-4 rounded-full font-semibold transition-colors text-sm"
+                >
+                  Send a message <ArrowRight size={15} />
+                </Link>
+              </div>
+            </Reveal>
+          </div>
         </div>
       </section>
     </>
