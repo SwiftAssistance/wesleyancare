@@ -5,19 +5,11 @@ import SectionHead from '../components/SectionHead.jsx';
 import Ticker from '../components/Ticker.jsx';
 import SEO from '../components/SEO.jsx';
 import POSTS from '../data/posts.js';
+import SERVICES from '../data/services.js';
 
 const AREAS = [
   'Slough', 'Windsor', 'Maidenhead', 'Eton', 'Langley', 'Burnham',
   'Farnham Common', 'Stoke Poges', 'Iver', 'Gerrards Cross', 'Taplow', 'Reading',
-];
-
-const SERVICES_PREVIEW = [
-  { title: 'Dementia Care',         desc: 'Consistent, patient support — building routine and calm in familiar surroundings.' },
-  { title: 'Palliative Care',       desc: 'Sensitive end-of-life care focused on comfort, dignity, and being present.' },
-  { title: 'Cardiac Care',          desc: 'Structured support for heart conditions — medication, mobility, daily routine.' },
-  { title: 'Mental Health Support', desc: 'Practical, non-judgemental help for adults, building confidence day by day.' },
-  { title: 'Spinal Injury Support', desc: 'Skilled personal care and rehabilitation assistance, adapted as needs change.' },
-  { title: 'Home & Personal Care',  desc: 'Flexible packages built around your actual routine — from one hour to live-in.' },
 ];
 
 const TESTIMONIALS = [
@@ -179,18 +171,18 @@ export default function Home() {
             </h2>
           </Reveal>
           <div>
-            {SERVICES_PREVIEW.map((s, i) => (
-              <Reveal key={i} delay={i * 40}>
+            {SERVICES.map((s, i) => (
+              <Reveal key={s.slug} delay={i * 40}>
                 <Link
-                  to="/services"
+                  to={`/services/${s.slug}`}
                   className="group grid grid-cols-[2.5rem_1fr_auto] sm:grid-cols-[4rem_2fr_3fr_auto] items-baseline gap-4 sm:gap-8 py-6 sm:py-7 border-t border-evergreen/20 last:border-b transition-colors hover:bg-sand/50"
                 >
                   <span className="label-mono text-terracotta">0{i + 1}</span>
                   <span className="font-display text-2xl sm:text-3xl text-evergreen tracking-tight group-hover:text-terracotta transition-colors">
                     {s.title}
                   </span>
-                  <span className="hidden sm:block text-sm text-evergreen/55 leading-relaxed max-w-md">
-                    {s.desc}
+                  <span className="hidden sm:block font-display italic text-lg text-evergreen/50 leading-snug max-w-md">
+                    {s.tagline}
                   </span>
                   <ArrowUpRight size={18} className="self-center text-evergreen/30 group-hover:text-terracotta group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
                 </Link>
