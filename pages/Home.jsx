@@ -2,8 +2,14 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, ArrowUpRight, Phone } from 'lucide-react';
 import Reveal from '../components/Reveal.jsx';
 import SectionHead from '../components/SectionHead.jsx';
+import Ticker from '../components/Ticker.jsx';
 import SEO from '../components/SEO.jsx';
 import POSTS from '../data/posts.js';
+
+const AREAS = [
+  'Slough', 'Windsor', 'Maidenhead', 'Eton', 'Langley', 'Burnham',
+  'Farnham Common', 'Stoke Poges', 'Iver', 'Gerrards Cross', 'Taplow', 'Reading',
+];
 
 const SERVICES_PREVIEW = [
   { title: 'Dementia Care',         desc: 'Consistent, patient support — building routine and calm in familiar surroundings.' },
@@ -70,7 +76,7 @@ export default function Home() {
                 <p className="text-lg md:text-xl text-evergreen/65 leading-relaxed mb-9">
                   I'm a Slough-based private care provider supporting adults with complex needs — dementia, mental health, cardiac conditions, spinal injuries, and more. Every care plan is built around the individual, not a template.
                 </p>
-                <div className="flex flex-wrap gap-3 mb-10">
+                <div className="flex flex-wrap gap-3 mb-6">
                   <Link to="/contact" className="btn btn-solid">
                     Get in touch <ArrowRight size={13} />
                   </Link>
@@ -78,6 +84,12 @@ export default function Home() {
                     Services
                   </Link>
                 </div>
+                <p className="font-mono text-xs text-evergreen/55 mb-10">
+                  Or call directly —{' '}
+                  <a href="tel:01753424473" className="text-evergreen underline underline-offset-4 decoration-evergreen/30 hover:text-terracotta transition-colors">
+                    01753 424 473
+                  </a>
+                </p>
                 <ul className="font-mono text-xs text-evergreen/55 space-y-2">
                   <li>— CQC registered</li>
                   <li>— DBS-checked, reference-verified carers</li>
@@ -194,6 +206,9 @@ export default function Home() {
           </Reveal>
         </div>
       </section>
+
+      {/* ── COVERAGE TICKER ───────────────────────────── */}
+      <Ticker items={AREAS} label="Covering" />
 
       {/* ── WHY CHOOSE US ─────────────────────────────── */}
       <section className="bg-evergreen text-cream py-16 sm:py-24">

@@ -4,9 +4,19 @@ import Reveal from '../components/Reveal.jsx';
 import SEO, { buildArticleLD, buildBreadcrumbLD } from '../components/SEO.jsx';
 import POSTS from '../data/posts.js';
 
-function BodyBlock({ block }) {
+function BodyBlock({ block, first = false }) {
   if (block.type === 'p') {
-    return <p className="text-evergreen/70 text-lg leading-relaxed">{block.text}</p>;
+    return (
+      <p
+        className={`text-evergreen/70 text-lg leading-relaxed ${
+          first
+            ? 'first-letter:font-display first-letter:text-[3.4em] first-letter:leading-[0.85] first-letter:float-left first-letter:mr-2.5 first-letter:mt-1 first-letter:text-terracotta'
+            : ''
+        }`}
+      >
+        {block.text}
+      </p>
+    );
   }
   if (block.type === 'h2') {
     return (
@@ -120,7 +130,7 @@ export default function BlogPost() {
           <Reveal>
             <div className="space-y-6">
               {post.body.map((block, i) => (
-                <BodyBlock key={i} block={block} />
+                <BodyBlock key={i} block={block} first={i === 0 && block.type === 'p'} />
               ))}
             </div>
           </Reveal>

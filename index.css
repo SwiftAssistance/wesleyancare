@@ -66,4 +66,41 @@
   .rule {
     @apply border-t border-evergreen/20;
   }
+
+  /* Coverage ticker */
+  .animate-marquee {
+    animation: marquee 45s linear infinite;
+  }
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* Print: families print care information — strip the chrome, keep the content */
+@media print {
+  header,
+  footer,
+  .no-print {
+    display: none !important;
+  }
+
+  body {
+    background: #fff;
+    color: #000;
+  }
+
+  main {
+    padding-top: 0 !important;
+  }
+
+  section {
+    padding-top: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
+  }
+
+  a[href^="tel:"]::after {
+    content: none;
+  }
 }
