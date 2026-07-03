@@ -1,42 +1,42 @@
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar.jsx';
 import Footer from './components/Footer.jsx';
-import Home    from './pages/Home.jsx';
-import About   from './pages/About.jsx';
+import MobileCallBar from './components/MobileCallBar.jsx';
+import Home     from './pages/Home.jsx';
+import About    from './pages/About.jsx';
 import Services from './pages/Services.jsx';
 import Blogs    from './pages/Blogs.jsx';
 import BlogPost from './pages/BlogPost.jsx';
 import Contact  from './pages/Contact.jsx';
+import NotFound from './pages/NotFound.jsx';
 
 export default function App() {
   return (
     <BrowserRouter>
-      <div className="min-h-screen bg-[#FAF7F2] text-[#1B2A4A] antialiased">
-        <style>{`
-          @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap');
-          * { font-family: 'DM Sans', sans-serif; }
-          .font-serif { font-family: 'Libre Baskerville', Georgia, serif !important; font-feature-settings: 'liga' 1, 'kern' 1; }
-          html { scroll-behavior: smooth; scrollbar-gutter: stable; }
-          ::selection { background: #D4A855; color: #fff; }
-          :focus-visible { outline: 2px solid #D4A855; outline-offset: 2px; }
-          button, a { -webkit-tap-highlight-color: transparent; }
-        `}</style>
+      <div className="min-h-screen bg-cream text-evergreen">
+        <a
+          href="#main"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[60] focus:bg-evergreen focus:text-cream focus:px-5 focus:py-3 focus:rounded-full focus:text-sm focus:font-semibold"
+        >
+          Skip to main content
+        </a>
 
         <Navbar />
 
-        <main>
+        <main id="main">
           <Routes>
-            <Route path="/"         element={<Home />} />
-            <Route path="/about"    element={<About />} />
-            <Route path="/services" element={<Services />} />
-            <Route path="/blogs"      element={<Blogs />} />
+            <Route path="/"            element={<Home />} />
+            <Route path="/about"       element={<About />} />
+            <Route path="/services"    element={<Services />} />
+            <Route path="/blogs"       element={<Blogs />} />
             <Route path="/blogs/:slug" element={<BlogPost />} />
-            <Route path="/contact"  element={<Contact />} />
-            <Route path="*"         element={<Navigate to="/" replace />} />
+            <Route path="/contact"     element={<Contact />} />
+            <Route path="*"            element={<NotFound />} />
           </Routes>
         </main>
 
         <Footer />
+        <MobileCallBar />
       </div>
     </BrowserRouter>
   );
