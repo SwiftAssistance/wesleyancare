@@ -20,7 +20,6 @@
   :focus-visible {
     outline: 2px solid #c05f3c;
     outline-offset: 2px;
-    border-radius: 2px;
   }
 
   button,
@@ -40,5 +39,31 @@
       animation-iteration-count: 1 !important;
       transition-duration: 0.01ms !important;
     }
+  }
+}
+
+@layer components {
+  /* Editorial button language: rectangular, mono, letterspaced */
+  .btn {
+    @apply inline-flex items-center justify-center gap-2.5 font-mono text-[11px] uppercase tracking-[0.18em] px-7 py-4 transition-colors duration-200;
+  }
+  .btn-solid {
+    @apply bg-evergreen text-cream hover:bg-terracotta;
+  }
+  .btn-outline {
+    @apply border border-evergreen/30 text-evergreen hover:border-evergreen hover:bg-evergreen hover:text-cream;
+  }
+  .btn-accent {
+    @apply bg-terracotta text-white hover:bg-terracotta-dark;
+  }
+
+  /* Metadata / kicker labels */
+  .label-mono {
+    @apply font-mono text-[11px] uppercase tracking-[0.2em];
+  }
+
+  /* Hairline rules */
+  .rule {
+    @apply border-t border-evergreen/20;
   }
 }

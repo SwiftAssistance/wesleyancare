@@ -1,16 +1,13 @@
 import { Link } from 'react-router-dom';
-import {
-  Brain, Heart, Activity, Stethoscope, HandHeart,
-  Home as HomeIcon, ArrowRight, Phone, Check, BadgeCheck,
-} from 'lucide-react';
+import { ArrowRight, Phone } from 'lucide-react';
 import Reveal from '../components/Reveal.jsx';
 import Accordion from '../components/Accordion.jsx';
 import PageHero from '../components/PageHero.jsx';
+import SectionHead from '../components/SectionHead.jsx';
 import SEO, { buildBreadcrumbLD, SITE_URL } from '../components/SEO.jsx';
 
 const SERVICES = [
   {
-    icon: Brain,
     title: 'Dementia Care',
     img: 'https://images.pexels.com/photos/8172269/pexels-photo-8172269.jpeg?auto=compress&cs=tinysrgb&w=1200',
     intro: 'Living with dementia is different for everyone. My carers bring consistency — the same faces, the same routines, the same patient presence. I work alongside families, not around them.',
@@ -24,7 +21,6 @@ const SERVICES = [
     ],
   },
   {
-    icon: Heart,
     title: 'Palliative Care',
     img: 'https://images.pexels.com/photos/14441380/pexels-photo-14441380.jpeg?auto=compress&cs=tinysrgb&w=1200',
     intro: 'End-of-life care should be about the person, not logistics. I work alongside GPs and medical teams to make sure every moment is as comfortable and peaceful as possible — for the individual and their family.',
@@ -38,7 +34,6 @@ const SERVICES = [
     ],
   },
   {
-    icon: Activity,
     title: 'Cardiac Care',
     img: 'https://images.pexels.com/photos/8949833/pexels-photo-8949833.jpeg?auto=compress&cs=tinysrgb&w=1200',
     intro: 'Managing a heart condition at home takes careful attention to medication, routine, and physical limits. My carers are trained to support safely and to keep families and healthcare providers informed.',
@@ -52,7 +47,6 @@ const SERVICES = [
     ],
   },
   {
-    icon: Stethoscope,
     title: 'Spinal Injury Support',
     img: 'https://images.pexels.com/photos/18429373/pexels-photo-18429373.jpeg?auto=compress&cs=tinysrgb&w=1200',
     intro: 'Skilled, attentive support for individuals living with spinal cord injuries. My trained support workers help clients maintain as much independence as possible, with care adapted as needs change over time.',
@@ -66,7 +60,6 @@ const SERVICES = [
     ],
   },
   {
-    icon: HandHeart,
     title: 'Mental Health Support',
     img: 'https://images.pexels.com/photos/7529994/pexels-photo-7529994.jpeg?auto=compress&cs=tinysrgb&w=1200',
     intro: 'Consistent, non-judgemental support for adults managing mental health challenges. I focus on building routine and confidence at a pace the individual sets — not one imposed on them.',
@@ -80,7 +73,6 @@ const SERVICES = [
     ],
   },
   {
-    icon: HomeIcon,
     title: 'Home & Personal Care',
     img: 'https://images.pexels.com/photos/8949908/pexels-photo-8949908.jpeg?auto=compress&cs=tinysrgb&w=1200',
     intro: 'Practical, day-to-day support for people who need help at home. I offer flexible packages — from a one-hour morning visit to full daily care — built around your actual routine, not mine.',
@@ -132,108 +124,105 @@ export default function Services() {
 
       <PageHero
         crumbs={[{ name: 'Home', path: '/' }, { name: 'Services' }]}
-        title={<>Specialist care for <em className="text-terracotta">complex needs</em>.</>}
-        lead="Private and self-funded care, delivered across Slough and Berkshire. Direct Payments accepted."
+        n="03"
+        title={<>Specialist care for<br /><em className="text-terracotta">complex needs</em>.</>}
+        lead="Private and self-funded care, delivered across Slough and Berkshire. Direct Payments accepted. Six specialisms, one approach: built around the person."
       >
-        <div className="flex flex-wrap gap-2.5 mt-9">
-          {['Private & self-funded', '1-hour visits to live-in', 'Slough & Berkshire'].map(t => (
-            <span key={t} className="inline-flex items-center gap-2 bg-parchment border border-evergreen/10 rounded-full px-4 py-2 text-sm text-evergreen/70 font-medium">
-              <BadgeCheck size={14} className="text-moss" /> {t}
-            </span>
-          ))}
-        </div>
+        <ul className="font-mono text-xs text-evergreen/55 flex flex-wrap gap-x-8 gap-y-2 mt-9">
+          <li>— Private &amp; self-funded</li>
+          <li>— 1-hour visits to live-in</li>
+          <li>— Slough &amp; Berkshire</li>
+        </ul>
       </PageHero>
 
-      {/* ── SERVICE CARDS ─────────────────────────────── */}
-      <section className="pb-8">
-        <div className="max-w-6xl mx-auto px-5 space-y-8">
-          {SERVICES.map((s, i) => (
-            <Reveal key={i} delay={50}>
-              <article className="bg-parchment border border-evergreen/5 rounded-[2rem] overflow-hidden hover:shadow-lift transition-shadow duration-300">
-                <div className="grid lg:grid-cols-2">
-                  <div className={`aspect-[16/10] lg:aspect-auto lg:h-full ${i % 2 === 1 ? 'lg:order-2' : ''}`}>
-                    <img
-                      src={s.img}
-                      alt={`${s.title} – Wesleyan Care Slough`}
-                      className="w-full h-full object-cover"
-                      loading="lazy"
-                      decoding="async"
-                    />
+      {/* ── SERVICES ──────────────────────────────────── */}
+      <div>
+        {SERVICES.map((s, i) => (
+          <section key={i} className="border-t border-evergreen/20">
+            <div className="max-w-7xl mx-auto px-5 sm:px-8 py-14 sm:py-20">
+              <Reveal>
+                <div className="grid md:grid-cols-12 gap-10 md:gap-8 items-start">
+                  {/* Index + title column */}
+                  <div className="md:col-span-4">
+                    <p className="label-mono text-terracotta mb-5">0{i + 1} / 0{SERVICES.length}</p>
+                    <h2 className="font-display text-4xl sm:text-5xl text-evergreen tracking-tight leading-[1.05] mb-7">
+                      {s.title}
+                    </h2>
+                    <figure className={i % 2 === 1 ? 'hidden md:block' : ''}>
+                      <img
+                        src={s.img}
+                        alt={`${s.title} – Wesleyan Care Slough`}
+                        className="w-full aspect-[4/3] object-cover"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    </figure>
                   </div>
-                  <div className="p-8 md:p-12">
-                    <span className="w-12 h-12 rounded-2xl bg-sand text-evergreen flex items-center justify-center mb-6">
-                      <s.icon size={20} />
-                    </span>
-                    <h2 className="font-display text-3xl text-evergreen tracking-tight mb-4">{s.title}</h2>
-                    <p className="text-evergreen/60 leading-relaxed mb-7">{s.intro}</p>
-                    <ul className="grid sm:grid-cols-2 gap-y-2.5 gap-x-6 mb-8">
+
+                  {/* Copy + includes */}
+                  <div className="md:col-span-8 md:pl-10">
+                    <p className="text-evergreen/65 text-lg sm:text-xl leading-relaxed max-w-2xl mb-10">
+                      {s.intro}
+                    </p>
+                    <p className="label-mono text-evergreen/50 border-t border-evergreen/20 pt-4 mb-6">
+                      This service includes
+                    </p>
+                    <ul className="grid sm:grid-cols-2 gap-x-10 mb-10 max-w-2xl">
                       {s.includes.map((item, j) => (
-                        <li key={j} className="flex items-start gap-2.5 text-sm text-evergreen/70">
-                          <Check size={15} className="text-moss mt-0.5 flex-shrink-0" />
-                          <span>{item}</span>
+                        <li key={j} className="flex items-baseline gap-3.5 text-evergreen/70 py-2.5 border-b border-evergreen/10">
+                          <span className="font-mono text-[10px] text-terracotta select-none">{String(j + 1).padStart(2, '0')}</span>
+                          <span className="text-[0.95rem]">{item}</span>
                         </li>
                       ))}
                     </ul>
-                    <Link
-                      to="/contact"
-                      className="inline-flex items-center gap-2 bg-evergreen hover:bg-evergreen-light text-cream px-6 py-3 rounded-full font-semibold transition-colors text-sm"
-                    >
-                      Enquire about {s.title.toLowerCase()} <ArrowRight size={14} />
+                    <Link to="/contact" className="btn btn-outline">
+                      Enquire about {s.title.toLowerCase()} <ArrowRight size={13} />
                     </Link>
                   </div>
                 </div>
-              </article>
-            </Reveal>
-          ))}
-        </div>
-      </section>
+              </Reveal>
+            </div>
+          </section>
+        ))}
+      </div>
 
       {/* ── FAQ ───────────────────────────────────────── */}
-      <section className="py-16 md:py-24">
-        <div className="max-w-3xl mx-auto px-5">
-          <Reveal>
-            <div className="text-center mb-12">
-              <p className="text-[11px] font-bold uppercase tracking-[0.25em] text-terracotta mb-5">Common questions</p>
-              <h2 className="font-display text-4xl md:text-5xl text-evergreen leading-tight tracking-tight">
+      <section className="border-t border-evergreen/20 py-16 sm:py-24">
+        <div className="max-w-7xl mx-auto px-5 sm:px-8">
+          <Reveal><SectionHead n="07" label="Common questions" /></Reveal>
+          <div className="grid md:grid-cols-12 gap-10 md:gap-8 mt-10 sm:mt-14">
+            <Reveal className="md:col-span-4" delay={60}>
+              <h2 className="font-display text-4xl sm:text-5xl text-evergreen tracking-tight leading-tight md:sticky md:top-28">
                 Questions families ask me.
               </h2>
-            </div>
-          </Reveal>
-          <Reveal delay={80}>
-            <Accordion items={FAQS} />
-          </Reveal>
+            </Reveal>
+            <Reveal className="md:col-span-8" delay={120}>
+              <Accordion items={FAQS} />
+            </Reveal>
+          </div>
         </div>
       </section>
 
-      {/* ── BOTTOM CTA ────────────────────────────────── */}
-      <section className="px-3 sm:px-5 pb-20">
-        <div className="max-w-7xl mx-auto bg-terracotta rounded-[2rem] sm:rounded-[2.5rem] overflow-hidden relative">
-          <div
-            aria-hidden="true"
-            className="absolute -bottom-24 -left-24 w-96 h-96 rounded-full bg-white/10 blur-3xl pointer-events-none"
-          />
-          <div className="max-w-6xl mx-auto px-6 sm:px-10 py-16 md:py-20 grid md:grid-cols-2 gap-12 items-center relative">
-            <Reveal>
-              <div className="text-white">
-                <h2 className="font-display text-4xl md:text-5xl leading-tight tracking-tight mb-6">Not sure what you need?</h2>
-                <p className="text-white/80 text-lg leading-relaxed">
+      {/* ── BOTTOM NOTE ───────────────────────────────── */}
+      <section className="bg-terracotta text-white">
+        <div className="max-w-7xl mx-auto px-5 sm:px-8 py-16 sm:py-20">
+          <div className="grid md:grid-cols-12 gap-10 items-end">
+            <Reveal className="md:col-span-8">
+              <div>
+                <p className="label-mono text-white/70 border-t border-white/30 pt-4 mb-8">A note</p>
+                <h2 className="font-display text-4xl sm:text-5xl tracking-tight leading-tight mb-6">Not sure what you need?</h2>
+                <p className="text-white/85 text-lg leading-relaxed max-w-2xl">
                   Many clients come to me with needs that don't fit neatly into one category — that's completely normal. Call me for a free, informal conversation and I'll help you figure out what makes sense.
                 </p>
               </div>
             </Reveal>
-            <Reveal delay={100}>
-              <div className="flex flex-wrap gap-4 md:justify-end">
-                <a
-                  href="tel:01753424473"
-                  className="inline-flex items-center gap-2 bg-white text-terracotta-dark hover:bg-cream px-8 py-4 rounded-full font-semibold transition-colors text-sm"
-                >
-                  <Phone size={15} /> Call 01753 424 473
+            <Reveal className="md:col-span-4" delay={100}>
+              <div className="flex flex-col items-start gap-3 md:items-end">
+                <a href="tel:01753424473" className="btn bg-white text-terracotta-dark hover:bg-evergreen hover:text-cream">
+                  <Phone size={13} /> 01753 424 473
                 </a>
-                <Link
-                  to="/contact"
-                  className="inline-flex items-center gap-2 border border-white/40 hover:border-white text-white px-8 py-4 rounded-full font-semibold transition-colors text-sm"
-                >
-                  Send a message <ArrowRight size={15} />
+                <Link to="/contact" className="btn border border-white/50 text-white hover:bg-white hover:text-terracotta-dark hover:border-white">
+                  Send a message <ArrowRight size={13} />
                 </Link>
               </div>
             </Reveal>

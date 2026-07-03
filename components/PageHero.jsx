@@ -2,37 +2,35 @@ import { Link } from 'react-router-dom';
 import Reveal from './Reveal.jsx';
 
 /**
- * Light interior-page hero.
+ * Editorial interior-page opener: mono breadcrumb + page index over a hairline,
+ * oversized display heading, measured lead.
  * crumbs: [{ name, path? }] — last item rendered as current page.
  */
-export default function PageHero({ crumbs = [], title, lead, children }) {
+export default function PageHero({ crumbs = [], n, title, lead, children }) {
   return (
-    <section className="pt-32 sm:pt-36 pb-14 sm:pb-20 relative overflow-hidden">
-      <div
-        aria-hidden="true"
-        className="absolute -top-32 -right-32 w-[28rem] h-[28rem] rounded-full bg-sand blur-3xl opacity-70 pointer-events-none"
-      />
-      <div className="max-w-6xl mx-auto px-5 relative">
+    <section className="pt-28 sm:pt-36 pb-12 sm:pb-16">
+      <div className="max-w-7xl mx-auto px-5 sm:px-8">
         <Reveal>
-          {crumbs.length > 0 && (
-            <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.2em] mb-8">
+          <div className="rule pt-4 flex items-baseline justify-between gap-4 mb-10 sm:mb-14">
+            <nav aria-label="Breadcrumb" className="flex items-center gap-2.5 label-mono">
               {crumbs.map((c, i) => (
-                <span key={i} className="flex items-center gap-2">
-                  {i > 0 && <span className="text-evergreen/25">/</span>}
+                <span key={i} className="flex items-center gap-2.5">
+                  {i > 0 && <span className="text-evergreen/30">/</span>}
                   {c.path ? (
-                    <Link to={c.path} className="text-terracotta hover:text-terracotta-dark transition-colors">{c.name}</Link>
+                    <Link to={c.path} className="text-evergreen/60 hover:text-terracotta transition-colors">{c.name}</Link>
                   ) : (
-                    <span className="text-evergreen/45">{c.name}</span>
+                    <span className="text-evergreen">{c.name}</span>
                   )}
                 </span>
               ))}
             </nav>
-          )}
-          <h1 className="font-display text-5xl md:text-6xl lg:text-7xl text-evergreen leading-[1.02] tracking-tight mb-7 max-w-3xl">
+            {n && <span className="label-mono text-terracotta">( {n} )</span>}
+          </div>
+          <h1 className="font-display text-[13vw] sm:text-6xl md:text-7xl lg:text-[5.5rem] text-evergreen leading-[0.98] tracking-tight mb-8 max-w-4xl">
             {title}
           </h1>
           {lead && (
-            <p className="text-evergreen/60 text-lg md:text-xl leading-relaxed max-w-2xl">
+            <p className="text-evergreen/60 text-lg md:text-xl leading-relaxed max-w-xl">
               {lead}
             </p>
           )}
