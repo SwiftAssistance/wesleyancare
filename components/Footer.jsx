@@ -9,14 +9,7 @@ const NAV_LINKS = [
   { name: 'Contact',  to: '/contact' },
 ];
 
-const SERVICE_LINKS = [
-  'Dementia Care',
-  'Palliative Care',
-  'Cardiac Care',
-  'Mental Health Support',
-  'Spinal Injury Support',
-  'Home & Personal Care',
-];
+import SERVICES from '../data/services.js';
 
 export default function Footer() {
   return (
@@ -70,10 +63,10 @@ export default function Footer() {
         <div>
           <p className="label-mono text-cream/40 border-t border-cream/20 pt-4 mb-5">Services</p>
           <ul className="flex flex-col gap-2.5">
-            {SERVICE_LINKS.map(s => (
-              <li key={s}>
-                <Link to="/services" className="text-sm text-cream/60 hover:text-cream transition-colors">
-                  {s}
+            {SERVICES.map(s => (
+              <li key={s.slug}>
+                <Link to={`/services/${s.slug}`} className="text-sm text-cream/60 hover:text-cream transition-colors">
+                  {s.title}
                 </Link>
               </li>
             ))}

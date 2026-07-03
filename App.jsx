@@ -8,6 +8,7 @@ import Home from './pages/Home.jsx';
 // Home stays eager for the fastest first paint; the rest load on demand.
 const About    = lazy(() => import('./pages/About.jsx'));
 const Services = lazy(() => import('./pages/Services.jsx'));
+const Service  = lazy(() => import('./pages/Service.jsx'));
 const Blogs    = lazy(() => import('./pages/Blogs.jsx'));
 const BlogPost = lazy(() => import('./pages/BlogPost.jsx'));
 const Contact  = lazy(() => import('./pages/Contact.jsx'));
@@ -40,6 +41,7 @@ export default function App() {
               <Route path="/"            element={<Home />} />
               <Route path="/about"       element={<About />} />
               <Route path="/services"    element={<Services />} />
+              <Route path="/services/:slug" element={<Service />} />
               <Route path="/blogs"       element={<Blogs />} />
               <Route path="/blogs/:slug" element={<BlogPost />} />
               <Route path="/contact"     element={<Contact />} />

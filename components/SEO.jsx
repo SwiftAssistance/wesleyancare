@@ -96,6 +96,28 @@ export function buildArticleLD(post) {
   };
 }
 
+/* ── Service JSON-LD builder ─────────────────────────────────────── */
+export function buildServiceLD(service) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: `${service.title} – Wesleyan Care`,
+    serviceType: service.title,
+    description: service.intro,
+    url: `${SITE_URL}/services/${service.slug}`,
+    areaServed: [
+      { '@type': 'City', name: 'Slough' },
+      { '@type': 'AdministrativeArea', name: 'Berkshire' },
+    ],
+    provider: {
+      '@type': 'LocalBusiness',
+      name: SITE_NAME,
+      telephone: PHONE,
+      url: SITE_URL,
+    },
+  };
+}
+
 /* ── FAQPage JSON-LD builder ─────────────────────────────────────── */
 export function buildFAQLD(faqs) {
   return {
